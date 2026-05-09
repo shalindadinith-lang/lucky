@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>☘️ Lucky Tours Sri Lanka | Safe • Fast • Lucky</title>
 
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- EmailJS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -17,7 +19,6 @@
             --accent: #00ffae;
             --gold: #f0a500;
             --dark: #111;
-            --darker: #0a0a0a;
             --light: #f4f4f4;
             --white: #fff;
             --gray: #666;
@@ -73,9 +74,7 @@
             animation: spin 0.8s linear infinite;
         }
         @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
+            to { transform: rotate(360deg); }
         }
 
         /* Back to top */
@@ -148,17 +147,10 @@
             animation: float 3s ease-in-out infinite;
         }
         @keyframes float {
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-8px);
-            }
+            0%,100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
         }
-        .nav-logo span {
-            color: var(--accent);
-        }
+        .nav-logo span { color: var(--accent); }
         .nav-links {
             display: flex;
             list-style: none;
@@ -211,9 +203,7 @@
         .hamburger.active span:nth-child(1) {
             transform: rotate(45deg) translate(6px, 6px);
         }
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(6px, -6px);
         }
@@ -236,13 +226,11 @@
             align-items: center;
             justify-content: center;
         }
-        .hero-slide.active {
-            opacity: 1;
-        }
+        .hero-slide.active { opacity: 1; }
         .hero-slide .overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.4), rgba(0,0,0,0.6));
         }
         .hero-content {
             position: relative;
@@ -272,9 +260,7 @@
             letter-spacing: -1px;
             animation: fadeInUp 0.8s ease 0.15s both;
         }
-        .hero-content h1 .highlight {
-            color: var(--accent);
-        }
+        .hero-content h1 .highlight { color: var(--accent); }
         .hero-content h2 {
             font-size: 1.6rem;
             font-weight: 400;
@@ -297,14 +283,8 @@
             animation: fadeInUp 0.8s ease 0.6s both;
         }
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .btn {
             display: inline-block;
@@ -323,7 +303,7 @@
         .btn:hover {
             background: var(--primary-dark);
             transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(0, 168, 107, 0.4);
+            box-shadow: 0 15px 35px rgba(0,168,107,0.4);
         }
         .btn-outline {
             background: transparent;
@@ -332,7 +312,7 @@
         .btn-outline:hover {
             background: #fff;
             color: #111;
-            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 15px 35px rgba(255,255,255,0.3);
         }
         .slider-dots {
             position: absolute;
@@ -374,7 +354,7 @@
             height: 50px;
             border-radius: 50%;
             border: 2px solid #fff;
-            background: rgba(0, 0, 0, 0.35);
+            background: rgba(0,0,0,0.35);
             color: #fff;
             font-size: 1.2rem;
             cursor: pointer;
@@ -390,9 +370,7 @@
         }
 
         /* Sections */
-        section {
-            padding: 90px 30px;
-        }
+        section { padding: 90px 30px; }
         .section-header {
             text-align: center;
             margin-bottom: 60px;
@@ -422,15 +400,10 @@
             margin: 12px auto 0;
             border-radius: 2px;
         }
-        .container {
-            max-width: 1250px;
-            margin: 0 auto;
-        }
+        .container { max-width: 1250px; margin: 0 auto; }
 
         /* Packages */
-        #packages {
-            background: #fff;
-        }
+        #packages { background: #fff; }
         .package-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -442,7 +415,6 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
-            position: relative;
             border: 1px solid #eee;
         }
         .package-card:hover {
@@ -460,9 +432,7 @@
             object-fit: cover;
             transition: 0.5s;
         }
-        .package-card:hover .card-img img {
-            transform: scale(1.1);
-        }
+        .package-card:hover .card-img img { transform: scale(1.1); }
         .price-tag {
             position: absolute;
             top: 20px;
@@ -479,28 +449,16 @@
             position: absolute;
             bottom: 20px;
             left: 20px;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0,0,0,0.7);
             color: #fff;
             padding: 6px 14px;
             border-radius: 20px;
             font-size: 0.8rem;
             z-index: 2;
         }
-        .card-body {
-            padding: 25px;
-        }
-        .card-body h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: #111;
-        }
-        .card-body .location {
-            color: var(--primary);
-            font-weight: 500;
-            margin-bottom: 12px;
-            font-size: 0.9rem;
-        }
+        .card-body { padding: 25px; }
+        .card-body h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; color: #111; }
+        .card-body .location { color: var(--primary); font-weight: 500; margin-bottom: 12px; font-size: 0.9rem; }
         .features {
             list-style: none;
             display: flex;
@@ -515,21 +473,11 @@
             font-size: 0.78rem;
             color: #333;
         }
-        .features li i {
-            color: var(--primary);
-            margin-right: 4px;
-        }
-        .card-body .btn {
-            width: 100%;
-            text-align: center;
-            padding: 12px;
-            font-size: 0.9rem;
-        }
+        .features li i { color: var(--primary); margin-right: 4px; }
+        .card-body .btn { width: 100%; text-align: center; padding: 12px; font-size: 0.9rem; }
 
         /* Gallery */
-        #gallery {
-            background: #f8faf9;
-        }
+        #gallery { background: #f8faf9; }
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -542,7 +490,7 @@
             cursor: pointer;
             height: 250px;
             transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         .gallery-item img {
             width: 100%;
@@ -550,13 +498,11 @@
             object-fit: cover;
             transition: 0.5s;
         }
-        .gallery-item:hover img {
-            transform: scale(1.15);
-        }
+        .gallery-item:hover img { transform: scale(1.15); }
         .gallery-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0,0,0,0.5);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -565,13 +511,11 @@
             font-size: 2.5rem;
             color: #fff;
         }
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
         .lightbox {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.92);
+            background: rgba(0,0,0,0.92);
             z-index: 10000;
             display: flex;
             align-items: center;
@@ -581,15 +525,12 @@
             transition: 0.4s;
             cursor: pointer;
         }
-        .lightbox.active {
-            opacity: 1;
-            visibility: visible;
-        }
+        .lightbox.active { opacity: 1; visibility: visible; }
         .lightbox img {
             max-width: 90vw;
             max-height: 85vh;
             border-radius: 12px;
-            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 30px 70px rgba(0,0,0,0.5);
         }
         .close-lightbox {
             position: absolute;
@@ -600,15 +541,10 @@
             cursor: pointer;
             z-index: 10001;
         }
-        .close-lightbox:hover {
-            color: var(--accent);
-            transform: scale(1.2);
-        }
+        .close-lightbox:hover { color: var(--accent); transform: scale(1.2); }
 
         /* Reviews */
-        #reviews {
-            background: #fff;
-        }
+        #reviews { background: #fff; }
         .reviews-slider {
             display: flex;
             gap: 25px;
@@ -619,49 +555,25 @@
             scrollbar-color: var(--primary) #eee;
             -webkit-overflow-scrolling: touch;
         }
-        .reviews-slider::-webkit-scrollbar {
-            height: 6px;
-        }
-        .reviews-slider::-webkit-scrollbar-track {
-            background: #eee;
-            border-radius: 10px;
-        }
-        .reviews-slider::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 10px;
-        }
+        .reviews-slider::-webkit-scrollbar { height: 6px; }
+        .reviews-slider::-webkit-scrollbar-track { background: #eee; border-radius: 10px; }
+        .reviews-slider::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
         .review-card {
             min-width: 340px;
             max-width: 400px;
             background: #fafafa;
             padding: 30px;
             border-radius: var(--radius);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
             scroll-snap-align: start;
             flex-shrink: 0;
             border: 1px solid #f0f0f0;
             transition: var(--transition);
         }
-        .review-card:hover {
-            box-shadow: var(--shadow);
-            transform: translateY(-5px);
-        }
-        .stars {
-            color: #f0a500;
-            font-size: 1.1rem;
-            margin-bottom: 12px;
-        }
-        .review-text {
-            font-style: italic;
-            color: #555;
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-        .reviewer {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+        .review-card:hover { box-shadow: var(--shadow); transform: translateY(-5px); }
+        .stars { color: #f0a500; font-size: 1.1rem; margin-bottom: 12px; }
+        .review-text { font-style: italic; color: #555; margin-bottom: 15px; line-height: 1.6; }
+        .reviewer { display: flex; align-items: center; gap: 12px; }
         .reviewer-avatar {
             width: 50px;
             height: 50px;
@@ -674,19 +586,11 @@
             font-weight: 700;
             font-size: 1.2rem;
         }
-        .reviewer-info strong {
-            display: block;
-            color: #111;
-        }
-        .reviewer-info span {
-            font-size: 0.8rem;
-            color: #888;
-        }
+        .reviewer-info strong { display: block; color: #111; }
+        .reviewer-info span { font-size: 0.8rem; color: #888; }
 
         /* Blog */
-        #blog {
-            background: #f8faf9;
-        }
+        #blog { background: #f8faf9; }
         .blog-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -696,61 +600,22 @@
             background: #fff;
             border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
             transition: var(--transition);
         }
-        .blog-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-        }
-        .blog-img {
-            height: 220px;
-            overflow: hidden;
-        }
-        .blog-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: 0.5s;
-        }
-        .blog-card:hover .blog-img img {
-            transform: scale(1.1);
-        }
-        .blog-body {
-            padding: 20px 25px;
-        }
-        .blog-date {
-            color: var(--primary);
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin-bottom: 6px;
-        }
-        .blog-body h3 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: #111;
-        }
-        .blog-body p {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
-        .read-more {
-            color: var(--primary);
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-        .read-more:hover {
-            color: var(--primary-dark);
-        }
+        .blog-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+        .blog-img { height: 220px; overflow: hidden; }
+        .blog-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .blog-card:hover .blog-img img { transform: scale(1.1); }
+        .blog-body { padding: 20px 25px; }
+        .blog-date { color: var(--primary); font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; margin-bottom: 6px; }
+        .blog-body h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; color: #111; }
+        .blog-body p { color: #666; font-size: 0.9rem; margin-bottom: 15px; }
+        .read-more { color: var(--primary); font-weight: 600; text-decoration: none; font-size: 0.9rem; }
+        .read-more:hover { color: var(--primary-dark); }
 
         /* Booking */
-        #booking {
-            background: linear-gradient(135deg, #eafdf5 0%, #d4f7e8 100%);
-        }
+        #booking { background: linear-gradient(135deg, #eafdf5 0%, #d4f7e8 100%); }
         .booking-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -759,15 +624,8 @@
             max-width: 1100px;
             margin: 0 auto;
         }
-        .booking-info {
-            padding: 30px;
-        }
-        .booking-info h3 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #111;
-        }
+        .booking-info { padding: 30px; }
+        .booking-info h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; color: #111; }
         .info-item {
             display: flex;
             align-items: center;
@@ -793,9 +651,7 @@
             border-radius: var(--radius);
             box-shadow: var(--shadow);
         }
-        .input-group {
-            margin-bottom: 18px;
-        }
+        .input-group { margin-bottom: 18px; }
         .input-group label {
             display: block;
             margin-bottom: 6px;
@@ -820,13 +676,10 @@
         .input-group select:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(0, 168, 107, 0.1);
+            box-shadow: 0 0 0 4px rgba(0,168,107,0.1);
             background: #fff;
         }
-        textarea {
-            resize: vertical;
-            min-height: 110px;
-        }
+        textarea { resize: vertical; min-height: 110px; }
         .submit-btn {
             width: 100%;
             padding: 16px;
@@ -843,7 +696,7 @@
         .submit-btn:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(0, 168, 107, 0.35);
+            box-shadow: 0 12px 30px rgba(0,168,107,0.35);
         }
         .form-success {
             display: none;
@@ -855,53 +708,36 @@
             font-weight: 600;
             font-size: 1.1rem;
         }
-        .form-success.show {
-            display: block;
-        }
-        .form-success i {
-            font-size: 3rem;
-            display: block;
-            margin-bottom: 15px;
-        }
+        .form-success.show { display: block; }
+        .form-success i { font-size: 3rem; display: block; margin-bottom: 15px; }
 
         /* Comments */
-        #comments {
-            background: #fff;
-        }
-        .comments-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+        #comments { background: #fff; }
+        .comments-container { max-width: 800px; margin: 0 auto; }
         .comment-form-area {
             background: #f8faf9;
             padding: 30px;
             border-radius: var(--radius);
             margin-bottom: 30px;
         }
-        .comment-form-area h3 {
-            margin-bottom: 18px;
-            font-weight: 700;
-        }
-        .comment-list {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-        }
+        .comment-form-area h3 { margin-bottom: 18px; font-weight: 700; }
+        .comment-list { display: flex; flex-direction: column; gap: 18px; }
         .comment-item {
             background: #fafafa;
             padding: 20px 25px;
             border-radius: var(--radius-sm);
             border-left: 4px solid var(--primary);
+            animation: fadeInUp 0.4s ease;
         }
+        .comment-header { display: flex; justify-content: space-between; margin-bottom: 8px; }
+        .comment-name { font-weight: 700; color: #111; }
+        .comment-date { font-size: 0.75rem; color: #999; }
+        .comment-text { color: #555; font-size: 0.95rem; }
+        .no-comments { text-align: center; color: #999; padding: 30px; font-style: italic; }
 
         /* Contact */
-        #contact {
-            background: #111;
-            color: #ddd;
-        }
-        #contact .section-header h2 {
-            color: #fff;
-        }
+        #contact { background: #111; color: #ddd; }
+        #contact .section-header h2 { color: #fff; }
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -920,25 +756,13 @@
         .contact-card:hover {
             transform: translateY(-8px);
             border-color: var(--primary);
-            box-shadow: 0 15px 40px rgba(0, 168, 107, 0.2);
+            box-shadow: 0 15px 40px rgba(0,168,107,0.2);
         }
-        .contact-card i {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 15px;
-            display: block;
-        }
-        .contact-card h4 {
-            color: #fff;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        .contact-card a,
-        .contact-card p {
-            color: #ccc;
-            text-decoration: none;
-            font-size: 0.95rem;
-        }
+        .contact-card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 15px; display: block; }
+        .contact-card h4 { color: #fff; margin-bottom: 8px; font-weight: 600; }
+        .contact-card a, .contact-card p { color: #ccc; text-decoration: none; font-size: 0.95rem; word-break: break-all; }
+        .contact-card a:hover { color: var(--accent); }
+
         footer {
             background: #000;
             color: #888;
@@ -946,240 +770,582 @@
             padding: 25px;
             font-size: 0.9rem;
         }
-        footer .footer-brand {
-            color: var(--accent);
-            font-weight: 700;
-        }
+        footer .footer-brand { color: var(--accent); font-weight: 700; }
 
         /* Responsive */
         @media (max-width: 992px) {
-            .hero-content h1 {
-                font-size: 2.8rem;
-            }
-            .booking-wrapper {
-                grid-template-columns: 1fr;
-            }
+            .hero-content h1 { font-size: 2.8rem; }
+            .booking-wrapper { grid-template-columns: 1fr; }
+            .section-header h2 { font-size: 2.2rem; }
         }
         @media (max-width: 768px) {
-            nav {
-                padding: 12px 20px;
-            }
+            nav { padding: 12px 20px; }
             .nav-links {
                 position: fixed;
                 top: 0;
                 right: -100%;
                 width: 280px;
                 height: 100vh;
-                background: rgba(0, 0, 0, 0.97);
+                background: rgba(0,0,0,0.97);
                 flex-direction: column;
                 padding: 100px 30px 30px;
                 gap: 5px;
                 transition: 0.4s;
                 backdrop-filter: blur(15px);
             }
-            .nav-links.active {
-                right: 0;
-            }
-            .hamburger {
-                display: flex;
-            }
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
-            .package-grid {
-                grid-template-columns: 1fr;
-            }
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            }
-            .gallery-item {
-                height: 180px;
-            }
+            .nav-links.active { right: 0; }
+            .hamburger { display: flex; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .package-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+            .gallery-item { height: 180px; }
+            .review-card { min-width: 280px; }
         }
     </style>
 </head>
-
 <body>
 
-    <div id="preloader"><div class="loader"></div></div>
-    <button id="backToTop" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+<!-- Preloader -->
+<div id="preloader"><div class="loader"></div></div>
+<!-- Back to Top -->
+<button id="backToTop" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
 
-    <nav id="navbar">
-        <a href="#" class="nav-logo"><span class="logo-icon">☘️</span> LUCKY<span>TOURS</span></a>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#packages">Packages</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#booking">Booking</a></li>
-            <li><a href="#comments">Comments</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#booking" class="nav-btn">BOOK NOW</a></li>
-        </ul>
-        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-    </nav>
+<!-- Navigation -->
+<nav id="navbar">
+    <a href="#" class="nav-logo"><span class="logo-icon">☘️</span> LUCKY<span>TOURS</span></a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#booking">Booking</a></li>
+        <li><a href="#comments">Comments</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#booking" class="nav-btn">BOOK NOW</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
 
-    <!-- Hero Slider (no changes) -->
-    <section class="hero-slider" id="home">
-        <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop');">
-            <div class="overlay"></div>
-            <div class="hero-content">
-                <span class="badge">🏝️ Sri Lanka's Finest</span>
-                <h1>Discover <span class="highlight">Paradise</span></h1>
-                <h2>Island Wide Tours With Comfort & Safety</h2>
-                <p>✨ Custom Tours • 💒 Wedding Hires • ✈️ Airport 24/7 • 🚕 City Cabs</p>
-                <div class="hero-btns">
-                    <a href="#booking" class="btn">📅 Book Now</a>
-                    <a href="#packages" class="btn btn-outline">📦 Tour Packages</a>
+<!-- Hero Slider -->
+<section class="hero-slider" id="home">
+    <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop');">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <span class="badge">🏝️ Sri Lanka's Finest</span>
+            <h1>Discover <span class="highlight">Paradise</span></h1>
+            <h2>Island Wide Tours With Comfort & Safety</h2>
+            <p>✨ Custom Tours • 💒 Wedding Hires • ✈️ Airport 24/7 • 🚕 City Cabs</p>
+            <div class="hero-btns">
+                <a href="#booking" class="btn">📅 Book Now</a>
+                <a href="#packages" class="btn btn-outline">📦 Tour Packages</a>
+            </div>
+        </div>
+    </div>
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1544621678-2cc26e9b7b2f?q=80&w=1600&auto=format&fit=crop');">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <span class="badge">🚕 24/7 Service</span>
+            <h1>Safe & <span class="highlight">Reliable</span></h1>
+            <h2>Airport Transfers Around The Clock</h2>
+            <p>✈️ Pickup & Drop • 🏨 Hotel Transfers • 🗺️ Long Distance</p>
+            <div class="hero-btns">
+                <a href="#booking" class="btn">📅 Book Now</a>
+                <a href="#contact" class="btn btn-outline">📞 Call Us</a>
+            </div>
+        </div>
+    </div>
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1580748803968-9d5fe99ab141?q=80&w=1600&auto=format&fit=crop');">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <span class="badge">💒 Special Events</span>
+            <h1>Your <span class="highlight">Lucky</span> Journey</h1>
+            <h2>Wedding Hires & Luxury Vehicles</h2>
+            <p>🚗 Premium Fleet • 🎉 Events • 🌟 First Class Service</p>
+            <div class="hero-btns">
+                <a href="#booking" class="btn">📅 Book Now</a>
+                <a href="#gallery" class="btn btn-outline">🖼️ View Gallery</a>
+            </div>
+        </div>
+    </div>
+    <div class="slider-dots">
+        <button class="active" data-slide="0"></button>
+        <button data-slide="1"></button>
+        <button data-slide="2"></button>
+    </div>
+    <div class="slider-arrows">
+        <button id="prevSlide"><i class="fas fa-chevron-left"></i></button>
+        <button id="nextSlide"><i class="fas fa-chevron-right"></i></button>
+    </div>
+</section>
+
+<!-- Packages -->
+<section id="packages">
+    <div class="container">
+        <div class="section-header">
+            <p class="subtitle">Choose Your Adventure</p>
+            <h2>🏆 Tour Packages</h2>
+        </div>
+        <div class="package-grid">
+            <!-- Package cards (6 cards) -->
+            <div class="package-card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1598182198871-d3f4ab4fd181?q=80&w=1200&auto=format&fit=crop" alt="Sigiriya">
+                    <span class="price-tag">LKR 25,000</span>
+                    <span class="duration">🕐 1 Day</span>
+                </div>
+                <div class="card-body">
+                    <h3>Sigiriya & Dambulla</h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Cultural Triangle</p>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Sigiriya Rock</li>
+                        <li><i class="fas fa-check"></i> Dambulla Cave</li>
+                        <li><i class="fas fa-check"></i> AC Vehicle</li>
+                        <li><i class="fas fa-check"></i> Guide</li>
+                    </ul>
+                    <a href="#booking" class="btn">Book This Tour</a>
+                </div>
+            </div>
+            <div class="package-card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1518051870918-a46a30d6d5d0?q=80&w=1200&auto=format&fit=crop" alt="Ella">
+                    <span class="price-tag">LKR 45,000</span>
+                    <span class="duration">🕐 3 Days</span>
+                </div>
+                <div class="card-body">
+                    <h3>Ella & Nuwara Eliya</h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Hill Country</p>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Nine Arch Bridge</li>
+                        <li><i class="fas fa-check"></i> Tea Plantations</li>
+                        <li><i class="fas fa-check"></i> Hotel Included</li>
+                        <li><i class="fas fa-check"></i> AC Van</li>
+                    </ul>
+                    <a href="#booking" class="btn">Book This Tour</a>
+                </div>
+            </div>
+            <div class="package-card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1551918120-9739cb430c6d?q=80&w=1200&auto=format&fit=crop" alt="Galle">
+                    <span class="price-tag">LKR 30,000</span>
+                    <span class="duration">🕐 2 Days</span>
+                </div>
+                <div class="card-body">
+                    <h3>Galle & Beach Tour</h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Southern Coast</p>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Galle Fort</li>
+                        <li><i class="fas fa-check"></i> Unawatuna Beach</li>
+                        <li><i class="fas fa-check"></i> Turtle Hatchery</li>
+                        <li><i class="fas fa-check"></i> AC Vehicle</li>
+                    </ul>
+                    <a href="#booking" class="btn">Book This Tour</a>
+                </div>
+            </div>
+            <div class="package-card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1570789210967-2cacb7f6c3ff?q=80&w=1200&auto=format&fit=crop" alt="Kandy">
+                    <span class="price-tag">LKR 22,000</span>
+                    <span class="duration">🕐 1 Day</span>
+                </div>
+                <div class="card-body">
+                    <h3>Kandy City Tour</h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Kandy</p>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Temple of Tooth</li>
+                        <li><i class="fas fa-check"></i> Royal Garden</li>
+                        <li><i class="fas fa-check"></i> Cultural Show</li>
+                        <li><i class="fas fa-check"></i> AC Vehicle</li>
+                    </ul>
+                    <a href="#booking" class="btn">Book This Tour</a>
+                </div>
+            </div>
+            <div class="package-card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1200&auto=format&fit=crop" alt="Yala">
+                    <span class="price-tag">LKR 35,000</span>
+                    <span class="duration">🕐 2 Days</span>
+                </div>
+                <div class="card-body">
+                    <h3>Yala Safari</h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Yala National Park</p>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Jeep Safari</li>
+                        <li><i class="fas fa-check"></i> Wildlife Spotting</li>
+                        <li><i class="fas fa-check"></i> Camping Option</li>
+                        <li><i class="fas fa-check"></i> AC Transport</li>
+                    </ul>
+                    <a href="#booking" class="btn">Book This Tour</a>
+                </div>
+            </div>
+            <div class="package-card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1200&auto=format&fit=crop" alt="Mirissa">
+                    <span class="price-tag">LKR 28,000</span>
+                    <span class="duration">🕐 2 Days</span>
+                </div>
+                <div class="card-body">
+                    <h3>Mirissa Whales</h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Mirissa Beach</p>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Whale Watching</li>
+                        <li><i class="fas fa-check"></i> Beach Time</li>
+                        <li><i class="fas fa-check"></i> Seafood BBQ</li>
+                        <li><i class="fas fa-check"></i> AC Transport</li>
+                    </ul>
+                    <a href="#booking" class="btn">Book This Tour</a>
                 </div>
             </div>
         </div>
-        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop');">
-            <div class="overlay"></div>
-            <div class="hero-content">
-                <span class="badge">🚕 24/7 Service</span>
-                <h1>Safe & <span class="highlight">Reliable</span></h1>
-                <h2>Airport Transfers Around The Clock</h2>
-                <p>✈️ Pickup & Drop • 🏨 Hotel Transfers • 🗺️ Long Distance</p>
-                <div class="hero-btns">
-                    <a href="#booking" class="btn">📅 Book Now</a>
-                    <a href="#contact" class="btn btn-outline">📞 Call Us</a>
-                </div>
-            </div>
-        </div>
-        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop');">
-            <div class="overlay"></div>
-            <div class="hero-content">
-                <span class="badge">💒 Special Events</span>
-                <h1>Your <span class="highlight">Lucky</span> Journey</h1>
-                <h2>Wedding Hires & Luxury Vehicles</h2>
-                <p>🚗 Premium Fleet • 🎉 Events • 🌟 First Class Service</p>
-                <div class="hero-btns">
-                    <a href="#booking" class="btn">📅 Book Now</a>
-                    <a href="#gallery" class="btn btn-outline">🖼️ View Gallery</a>
-                </div>
-            </div>
-        </div>
-        <div class="slider-dots">
-            <button class="active" data-slide="0"></button>
-            <button data-slide="1"></button>
-            <button data-slide="2"></button>
-        </div>
-        <div class="slider-arrows">
-            <button id="prevSlide"><i class="fas fa-chevron-left"></i></button>
-            <button id="nextSlide"><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Packages, Gallery, Reviews, Blog sections unchanged (omitted for brevity) -->
-    <!-- ... (include all sections exactly as before, but ensure IDs exist) ... -->
-
-    <!-- Booking Form with integrated EmailJS + Google Sheets -->
-    <section id="booking">
-        <div class="container">
-            <div class="section-header">
-                <p class="subtitle">Reserve Your Ride</p>
-                <h2>📋 Book Your Tour</h2>
+<!-- Gallery -->
+<section id="gallery">
+    <div class="container">
+        <div class="section-header">
+            <p class="subtitle">Our Memories</p>
+            <h2>📸 Photo Gallery</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item" data-src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop" alt="Beach">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
             </div>
-            <div class="booking-wrapper">
-                <div class="booking-info">
-                    <h3>Why Choose Lucky Tours?</h3>
-                    <div class="info-item"><i class="fas fa-shield-alt"></i><span><strong>Safe & Secure</strong> – Licensed and insured vehicles</span></div>
-                    <div class="info-item"><i class="fas fa-clock"></i><span><strong>24/7 Service</strong> – Available anytime, anywhere</span></div>
-                    <div class="info-item"><i class="fas fa-star"></i><span><strong>5-Star Rated</strong> – Trusted by hundreds of travelers</span></div>
-                    <div class="info-item"><i class="fas fa-tag"></i><span><strong>Best Prices</strong> – Competitive rates, no hidden fees</span></div>
-                    <div class="info-item"><i class="fas fa-car"></i><span><strong>Premium Fleet</strong> – Comfortable AC vehicles</span></div>
+            <div class="gallery-item" data-src="https://images.unsplash.com/photo-1598182198871-d3f4ab4fd181?q=80&w=1200&auto=format&fit=crop">
+                <img src="https://images.unsplash.com/photo-1598182198871-d3f4ab4fd181?q=80&w=600&auto=format&fit=crop" alt="Sigiriya">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-src="https://images.unsplash.com/photo-1544621678-2cc26e9b7b2f?q=80&w=1200&auto=format&fit=crop">
+                <img src="https://images.unsplash.com/photo-1544621678-2cc26e9b7b2f?q=80&w=600&auto=format&fit=crop" alt="Train">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-src="https://images.unsplash.com/photo-1580748803968-9d5fe99ab141?q=80&w=1200&auto=format&fit=crop">
+                <img src="https://images.unsplash.com/photo-1580748803968-9d5fe99ab141?q=80&w=600&auto=format&fit=crop" alt="Temple">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-src="https://images.unsplash.com/photo-1551918120-9739cb430c6d?q=80&w=1200&auto=format&fit=crop">
+                <img src="https://images.unsplash.com/photo-1551918120-9739cb430c6d?q=80&w=600&auto=format&fit=crop" alt="Galle Fort">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1200&auto=format&fit=crop">
+                <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=600&auto=format&fit=crop" alt="Elephants">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-src="https://images.unsplash.com/photo-1570789210967-2cacb7f6c3ff?q=80&w=1200&auto=format&fit=crop">
+                <img src="https://images.unsplash.com/photo-1570789210967-2cacb7f6c3ff?q=80&w=600&auto=format&fit=crop" alt="Kandy">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1200&auto=format&fit=crop">
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=600&auto=format&fit=crop" alt="Whale">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <span class="close-lightbox" id="closeLightbox">&times;</span>
+    <img src="" alt="Lightbox Image" id="lightboxImg">
+</div>
+
+<!-- Reviews -->
+<section id="reviews">
+    <div class="container">
+        <div class="section-header">
+            <p class="subtitle">What Clients Say</p>
+            <h2>⭐ Client Reviews</h2>
+        </div>
+        <div class="reviews-slider" id="reviewsSlider"></div>
+    </div>
+</section>
+
+<!-- Blog -->
+<section id="blog">
+    <div class="container">
+        <div class="section-header">
+            <p class="subtitle">Travel Stories</p>
+            <h2>📝 Our Blog</h2>
+        </div>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <div class="blog-img">
+                    <img src="https://images.unsplash.com/photo-1598182198871-d3f4ab4fd181?q=80&w=800&auto=format&fit=crop" alt="Sigiriya Blog">
                 </div>
-                <div>
-                    <form id="bookingForm">
-                        <div class="input-group"><label>👤 Full Name *</label><input type="text" id="bName" required placeholder="Your full name"></div>
-                        <div class="input-group"><label>📞 Phone Number *</label><input type="tel" id="bPhone" required placeholder="0094719210238"></div>
-                        <div class="input-group"><label>📧 Email Address</label><input type="email" id="bEmail" placeholder="you@email.com"></div>
-                        <div class="input-group"><label>🗺️ Select Service *</label><select id="bService" required>
-                            <option value="">-- Choose a Service --</option>
-                            <option>Island Wide Tour</option>
-                            <option>Wedding Hire</option>
-                            <option>Airport Transfer</option>
-                            <option>City Cab</option>
-                            <option>Long Distance</option>
-                            <option>Custom Package</option>
-                        </select></div>
-                        <div class="input-group"><label>📍 Pickup Location</label><input type="text" id="bPickup" placeholder="e.g. Colombo Airport"></div>
-                        <div class="input-group"><label>📅 Date</label><input type="date" id="bDate"></div>
-                        <div class="input-group"><label>💬 More Details</label><textarea id="bMessage" placeholder="Tell us about your trip..."></textarea></div>
-                        <button class="submit-btn" type="submit"><i class="fas fa-paper-plane"></i> Submit Booking</button>
-                    </form>
-                    <div class="form-success" id="formSuccess">
-                        <i class="fas fa-check-circle"></i>
-                        <p>✅ Booking Submitted Successfully!</p>
-                        <p>We'll contact you shortly. Thank you! 🙏</p>
+                <div class="blog-body">
+                    <p class="blog-date">📅 May 2, 2026</p>
+                    <h3>Top 10 Places to Visit in Sri Lanka</h3>
+                    <p>Discover the most breathtaking destinations from Sigiriya to the southern beaches...</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-img">
+                    <img src="https://images.unsplash.com/photo-1544621678-2cc26e9b7b2f?q=80&w=800&auto=format&fit=crop" alt="Train Blog">
+                </div>
+                <div class="blog-body">
+                    <p class="blog-date">📅 April 28, 2026</p>
+                    <h3>The Famous Ella Train Journey</h3>
+                    <p>Everything you need to know about the most scenic train ride in the world...</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-img">
+                    <img src="https://images.unsplash.com/photo-1551918120-9739cb430c6d?q=80&w=800&auto=format&fit=crop" alt="Galle Blog">
+                </div>
+                <div class="blog-body">
+                    <p class="blog-date">📅 April 20, 2026</p>
+                    <h3>Galle Fort: A UNESCO Heritage Guide</h3>
+                    <p>Explore the charm of Galle Fort with our complete travel guide and tips...</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Booking -->
+<section id="booking">
+    <div class="container">
+        <div class="section-header">
+            <p class="subtitle">Reserve Your Ride</p>
+            <h2>📋 Book Your Tour</h2>
+        </div>
+        <div class="booking-wrapper">
+            <div class="booking-info">
+                <h3>Why Choose Lucky Tours?</h3>
+                <div class="info-item"><i class="fas fa-shield-alt"></i><span><strong>Safe & Secure</strong> – Licensed and insured vehicles</span></div>
+                <div class="info-item"><i class="fas fa-clock"></i><span><strong>24/7 Service</strong> – Available anytime, anywhere</span></div>
+                <div class="info-item"><i class="fas fa-star"></i><span><strong>5-Star Rated</strong> – Trusted by hundreds of travelers</span></div>
+                <div class="info-item"><i class="fas fa-tag"></i><span><strong>Best Prices</strong> – Competitive rates, no hidden fees</span></div>
+                <div class="info-item"><i class="fas fa-car"></i><span><strong>Premium Fleet</strong> – Comfortable AC vehicles</span></div>
+            </div>
+            <div>
+                <form id="bookingForm">
+                    <div class="input-group"><label>👤 Full Name *</label><input type="text" id="bName" required placeholder="Your full name"></div>
+                    <div class="input-group"><label>📞 Phone Number *</label><input type="tel" id="bPhone" required placeholder="0094719210238"></div>
+                    <div class="input-group"><label>📧 Email Address</label><input type="email" id="bEmail" placeholder="you@email.com"></div>
+                    <div class="input-group"><label>🗺️ Select Service *</label><select id="bService" required>
+                        <option value="">-- Choose a Service --</option>
+                        <option>Island Wide Tour</option>
+                        <option>Wedding Hire</option>
+                        <option>Airport Transfer</option>
+                        <option>City Cab</option>
+                        <option>Long Distance</option>
+                        <option>Custom Package</option>
+                    </select></div>
+                    <div class="input-group"><label>📍 Pickup Location</label><input type="text" id="bPickup" placeholder="e.g. Colombo Airport"></div>
+                    <div class="input-group"><label>📅 Date</label><input type="date" id="bDate"></div>
+                    <div class="input-group"><label>💬 More Details</label><textarea id="bMessage" placeholder="Tell us about your trip..."></textarea></div>
+                    <button class="submit-btn" type="submit"><i class="fas fa-paper-plane"></i> Submit Booking</button>
+                </form>
+                <div class="form-success" id="formSuccess">
+                    <i class="fas fa-check-circle"></i>
+                    <p>✅ Booking Submitted Successfully!</p>
+                    <p>We'll contact you shortly. Thank you! 🙏</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Comments -->
+<section id="comments">
+    <div class="container">
+        <div class="section-header">
+            <p class="subtitle">Share Your Experience</p>
+            <h2>💬 Client Comments</h2>
+        </div>
+        <div class="comments-container">
+            <div class="comment-form-area">
+                <h3>Leave a Comment</h3>
+                <div class="input-group"><label>Your Name *</label><input type="text" id="commentName" placeholder="Enter your name" required></div>
+                <div class="input-group"><label>Your Comment *</label><textarea id="commentText" placeholder="Share your experience with Lucky Tours..." required></textarea></div>
+                <button class="submit-btn" id="submitComment" style="width:auto;padding:12px 30px;"><i class="fas fa-comment"></i> Post Comment</button>
+            </div>
+            <h4 style="margin-bottom:20px;color:#111;">Recent Comments (<span id="commentCount">0</span>)</h4>
+            <div class="comment-list" id="commentList">
+                <p class="no-comments" id="noComments">No comments yet. Be the first to share! 😊</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+    <div class="container">
+        <div class="section-header">
+            <p class="subtitle">Get In Touch</p>
+            <h2>📬 Contact Us</h2>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-card"><i class="fas fa-phone"></i><h4>Call Us</h4><a href="tel:+94719210238">+94 71 921 0238</a></div>
+            <div class="contact-card"><i class="fab fa-whatsapp"></i><h4>WhatsApp</h4><a href="https://wa.me/94719210238" target="_blank">+94 71 921 0238</a></div>
+            <div class="contact-card"><i class="fas fa-envelope"></i><h4>Email</h4><a href="mailto:luckytours.iw@gmail.com">luckytours.iw@gmail.com</a></div>
+            <div class="contact-card"><i class="fas fa-map-marker-alt"></i><h4>Location</h4><p>Sri Lanka (Island Wide)</p></div>
+        </div>
+        <p style="text-align:center;margin-top:35px;font-size:1.3rem;color:var(--accent);font-weight:700;">
+            ☘️ "Your Lucky Journey Starts Here" 🚕
+        </p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 <span class="footer-brand">☘️ Lucky Tours</span> | All Rights Reserved | Designed with ❤️ in Sri Lanka</p>
+</footer>
+
+<!-- JavaScript -->
+<script>
+    (function() {
+        // Preloader
+        window.addEventListener('load', () => {
+            setTimeout(() => document.getElementById('preloader').classList.add('hidden'), 600);
+        });
+
+        // Back to Top
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => backToTop.classList.toggle('show', window.scrollY > 500));
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // Sticky Nav
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
+
+        // Mobile Menu
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Active Nav on Scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navAnchors = document.querySelectorAll('.nav-links a');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const top = section.offsetTop - 120;
+                if (window.scrollY >= top) current = section.getAttribute('id');
+            });
+            navAnchors.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+            });
+            if (!current) navAnchors[0].classList.add('active');
+        });
+
+        // Hero Slider
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.slider-dots button');
+        const prevBtn = document.getElementById('prevSlide');
+        const nextBtn = document.getElementById('nextSlide');
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        let autoSlideInterval;
+
+        function goToSlide(index) {
+            slides.forEach(s => s.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+            currentSlide = (index + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+        function nextSlide() { goToSlide(currentSlide + 1); }
+        function prevSlide() { goToSlide(currentSlide - 1); }
+        function startAutoSlide() { autoSlideInterval = setInterval(nextSlide, 5000); }
+        function resetAutoSlide() { clearInterval(autoSlideInterval); startAutoSlide(); }
+
+        prevBtn.addEventListener('click', () => { prevSlide(); resetAutoSlide(); });
+        nextBtn.addEventListener('click', () => { nextSlide(); resetAutoSlide(); });
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                goToSlide(parseInt(dot.dataset.slide));
+                resetAutoSlide();
+            });
+        });
+        startAutoSlide();
+
+        // Touch swipe
+        let touchStartX = 0;
+        const sliderEl = document.querySelector('.hero-slider');
+        sliderEl.addEventListener('touchstart', e => touchStartX = e.touches[0].clientX);
+        sliderEl.addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 50) {
+                diff > 0 ? nextSlide() : prevSlide();
+                resetAutoSlide();
+            }
+        });
+
+        // Gallery Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const closeLightbox = document.getElementById('closeLightbox');
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => {
+                lightboxImg.src = item.dataset.src;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        closeLightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+            lightboxImg.src = '';
+        });
+        lightbox.addEventListener('click', e => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+                lightboxImg.src = '';
+            }
+        });
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+                lightboxImg.src = '';
+            }
+        });
+
+        // Reviews Data
+        const reviewsData = [
+            { stars: 5, text: 'Amazing service! The driver was super friendly and the car was spotless. Highly recommend Lucky Tours for anyone visiting Sri Lanka! 🌟', name: 'Sarah Johnson', country: 'UK', initials: 'SJ' },
+            { stars: 5, text: 'Best taxi service in Sri Lanka. Used them for airport transfer and a day tour to Sigiriya. Professional, punctual, and great prices! 🙌', name: 'Michael Chen', country: 'Singapore', initials: 'MC' },
+            { stars: 5, text: 'Our wedding car was absolutely beautiful! They decorated it so nicely. Made our special day even more memorable. 💒', name: 'Priya Patel', country: 'India', initials: 'PP' },
+            { stars: 4, text: 'Very reliable and safe driving. We booked a 5-day tour around the island. Everything was well organized. Will use again! 🚕', name: 'David Müller', country: 'Germany', initials: 'DM' },
+            { stars: 5, text: 'Excellent communication via WhatsApp. The driver waited for us even though our flight was delayed. True 24/7 service! ✈️', name: 'Emma Williams', country: 'Australia', initials: 'EW' },
+            { stars: 5, text: 'Loved our Ella tour! The driver knew all the best spots for photos. Felt like traveling with a friend. Highly recommended! 📸', name: 'James Rodrigo', country: 'Sri Lanka', initials: 'JR' },
+            { stars: 4, text: 'Good value for money. Clean vehicle, safe driving, and friendly service. Booked the Galle tour and had a fantastic time. 🌊', name: 'Lisa Tanaka', country: 'Japan', initials: 'LT' }
+        ];
+        document.getElementById('reviewsSlider').innerHTML = reviewsData.map(r => `
+            <div class="review-card">
+                <div class="stars">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</div>
+                <p class="review-text">"${r.text}"</p>
+                <div class="reviewer">
+                    <div class="reviewer-avatar">${r.initials}</div>
+                    <div class="reviewer-info">
+                        <strong>${r.name}</strong>
+                        <span>${r.country}</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        `).join('');
 
-    <!-- Comments, Contact, Footer (same as before) -->
-    <section id="comments">
-        <div class="container">
-            <div class="section-header"><p class="subtitle">Share Your Experience</p><h2>💬 Client Comments</h2></div>
-            <div class="comments-container">
-                <div class="comment-form-area">
-                    <h3>Leave a Comment</h3>
-                    <div class="input-group"><label>Your Name *</label><input type="text" id="commentName" placeholder="Enter your name"></div>
-                    <div class="input-group"><label>Your Comment *</label><textarea id="commentText" placeholder="Share your experience..."></textarea></div>
-                    <button class="submit-btn" id="submitComment" style="width:auto;padding:12px 30px;"><i class="fas fa-comment"></i> Post Comment</button>
-                </div>
-                <h4 style="margin-bottom:20px;">Recent Comments (<span id="commentCount">0</span>)</h4>
-                <div class="comment-list" id="commentList"><p class="no-comments">No comments yet. 😊</p></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="container">
-            <div class="section-header"><p class="subtitle">Get In Touch</p><h2>📬 Contact Us</h2></div>
-            <div class="contact-grid">
-                <div class="contact-card"><i class="fas fa-phone"></i><h4>Call Us</h4><a href="tel:+94719210238">+94 71 921 0238</a></div>
-                <div class="contact-card"><i class="fab fa-whatsapp"></i><h4>WhatsApp</h4><a href="https://wa.me/94719210238">+94 71 921 0238</a></div>
-                <div class="contact-card"><i class="fas fa-envelope"></i><h4>Email</h4><a href="mailto:luckytours.iw@gmail.com">luckytours.iw@gmail.com</a></div>
-                <div class="contact-card"><i class="fas fa-map-marker-alt"></i><h4>Location</h4><p>Sri Lanka (Island Wide)</p></div>
-            </div>
-            <p style="text-align:center;margin-top:35px;font-size:1.3rem;color:var(--accent);font-weight:700;">☘️ "Your Lucky Journey Starts Here" 🚕</p>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 <span class="footer-brand">☘️ Lucky Tours</span> | All Rights Reserved | Designed with ❤️ in Sri Lanka</p>
-    </footer>
-
-    <script>
-        (function() {
-            // Preloader
-            window.addEventListener('load', () => {
-                setTimeout(() => document.getElementById('preloader').classList.add('hidden'), 600);
-            });
-
-            // Back to Top
-            const backToTop = document.getElementById('backToTop');
-            window.addEventListener('scroll', () => backToTop.classList.toggle('show', window.scrollY > 500));
-            backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-            // Sticky nav & mobile menu & slider & gallery & reviews & comments (same code as previous full answer, just include it all)
-            // ... (Insert all previous JavaScript for slider, gallery, reviews, comments, etc.) ...
-            // For brevity, I'll just include the booking handler modifications and a note that the rest remains.
-        })();
-    </script>
-
-    <!-- Custom Booking Handler Script -->
-    <script>
-        // Initialize EmailJS with your Public Key
-        emailjs.init("YOUR_PUBLIC_KEY"); // <-- Replace with your EmailJS public key
+        // Booking Form (EmailJS + Google Sheets)
+        emailjs.init("YOUR_PUBLIC_KEY"); // ⚠️ REPLACE WITH YOUR PUBLIC KEY
 
         const bookingForm = document.getElementById('bookingForm');
         const formSuccess = document.getElementById('formSuccess');
-
         bookingForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const name = document.getElementById('bName').value.trim();
@@ -1189,14 +1355,13 @@
             const pickup = document.getElementById('bPickup').value.trim();
             const date = document.getElementById('bDate').value;
             const message = document.getElementById('bMessage').value.trim();
-
             if (!name || !phone || !service) {
                 alert('⚠️ Please fill Name, Phone and Service.');
                 return;
             }
 
-            // 1. Send data to Google Sheets via Apps Script
-            fetch('https://script.google.com/macros/s/AKfycbz67LvVZAFTDIesa-pETl4QqBhay_CpeB2lm9DxVO9fqpZDN3NuTArXu_uxFQP2MrPU/exec', { // <-- Replace with your deployed web app URL
+            // Google Sheets
+            fetch('YOUR_GOOGLE_APPS_SCRIPT_URL', { // ⚠️ REPLACE WITH YOUR URL
                 method: 'POST',
                 body: JSON.stringify({ name, phone, email, service, pickup, date, message }),
                 headers: { 'Content-Type': 'application/json' }
@@ -1205,28 +1370,99 @@
             .then(data => console.log('Sheet saved:', data))
             .catch(err => console.error('Sheet error:', err));
 
-            // 2. Send notification email via EmailJS
-            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", { // <-- Replace with your Service ID and Template ID
-                name: name,
-                phone: phone,
-                email: email,
-                service: service,
-                pickup: pickup,
-                date: date,
-                message: message
+            // EmailJS
+            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", { // ⚠️ REPLACE IDs
+                name, phone, email, service, pickup, date, message
             })
-            .then(response => {
-                console.log('Email sent:', response);
-            })
-            .catch(error => {
-                console.error('Email error:', error);
-            });
+            .then(response => console.log('Email sent:', response))
+            .catch(error => console.error('Email error:', error));
 
-            // Show success message
             bookingForm.style.display = 'none';
             formSuccess.classList.add('show');
             formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
-    </script>
+
+        // Comments System (localStorage)
+        const commentName = document.getElementById('commentName');
+        const commentText = document.getElementById('commentText');
+        const submitComment = document.getElementById('submitComment');
+        const commentList = document.getElementById('commentList');
+        const commentCount = document.getElementById('commentCount');
+
+        function loadComments() {
+            return JSON.parse(localStorage.getItem('luckyToursComments') || '[]');
+        }
+        function saveComments(comments) {
+            localStorage.setItem('luckyToursComments', JSON.stringify(comments));
+        }
+        function escapeHTML(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+        function renderComments() {
+            const comments = loadComments();
+            commentCount.textContent = comments.length;
+            if (comments.length === 0) {
+                commentList.innerHTML = '<p class="no-comments">No comments yet. Be the first to share! 😊</p>';
+                return;
+            }
+            commentList.innerHTML = comments.map(c => `
+                <div class="comment-item">
+                    <div class="comment-header">
+                        <span class="comment-name">👤 ${escapeHTML(c.name)}</span>
+                        <span class="comment-date">${c.date}</span>
+                    </div>
+                    <p class="comment-text">${escapeHTML(c.text)}</p>
+                </div>
+            `).join('');
+        }
+        function addComment() {
+            const name = commentName.value.trim();
+            const text = commentText.value.trim();
+            if (!name || !text) {
+                alert('⚠️ Please enter both name and comment.');
+                return;
+            }
+            const comments = loadComments();
+            const now = new Date();
+            const dateStr = now.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+            comments.unshift({ name, text, date: dateStr });
+            if (comments.length > 50) comments.pop();
+            saveComments(comments);
+            renderComments();
+            commentName.value = '';
+            commentText.value = '';
+            document.getElementById('comments').scrollIntoView({ behavior: 'smooth' });
+
+            // Optional: Save to Google Sheets (uncomment and add your URL)
+            // fetch('YOUR_GOOGLE_APPS_SCRIPT_URL?action=saveComment', {
+            //   method: 'POST',
+            //   body: JSON.stringify({ name, comment: text }),
+            //   headers: { 'Content-Type': 'application/json' }
+            // }).catch(() => {});
+        }
+        submitComment.addEventListener('click', addComment);
+        commentText.addEventListener('keydown', e => {
+            if (e.ctrlKey && e.key === 'Enter') addComment();
+        });
+        renderComments();
+
+        // Smooth scroll fallback
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        console.log('☘️ Lucky Tours - Full Site Ready');
+    })();
+</script>
 </body>
 </html>
