@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>☘️ Lucky Tours Sri Lanka | Safe • Fast • Lucky</title>
 
     <!-- Font Awesome Icons -->
@@ -49,32 +49,84 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Preloader */
+        /* ========== PROGRESS BAR PRELOADER (100% before content) ========== */
         #preloader {
             position: fixed;
             inset: 0;
-            background: #fff;
+            background: linear-gradient(135deg, #ffffff 0%, #f9fefb 100%);
             z-index: 99999;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            transition: opacity 0.5s, visibility 0.5s;
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s;
+            backdrop-filter: blur(0px);
         }
         #preloader.hidden {
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
         }
-        .loader {
-            width: 60px;
-            height: 60px;
-            border: 5px solid #e0e0e0;
-            border-top-color: var(--primary);
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
+        .progress-container {
+            width: 320px;
+            max-width: 70vw;
+            text-align: center;
         }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+        .progress-bar-bg {
+            width: 100%;
+            height: 10px;
+            background: #e2e8f0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 18px;
+        }
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 20px;
+            transition: width 0.08s linear;
+            box-shadow: 0 0 6px var(--primary);
+        }
+        .progress-percent {
+            font-size: 2.8rem;
+            font-weight: 800;
+            font-family: 'Poppins', monospace;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+        .progress-text {
+            color: #2c3e35;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .progress-text i {
+            color: var(--primary);
+            font-size: 1rem;
+            animation: pulse 1.2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; transform: scale(0.95);}
+            50% { opacity: 1; transform: scale(1.1);}
+        }
+        .loader-logo {
+            margin-bottom: 25px;
+            font-size: 3.8rem;
+            animation: gentleFloat 2s ease-in-out infinite;
+        }
+        @keyframes gentleFloat {
+            0%,100% { transform: translateY(0px);}
+            50% { transform: translateY(-12px);}
         }
 
         /* Back to top */
@@ -772,7 +824,6 @@
         }
         footer .footer-brand { color: var(--accent); font-weight: 700; }
 
-        /* Responsive */
         @media (max-width: 992px) {
             .hero-content h1 { font-size: 2.8rem; }
             .booking-wrapper { grid-template-columns: 1fr; }
@@ -805,8 +856,23 @@
 </head>
 <body>
 
-<!-- Preloader -->
-<div id="preloader"><div class="loader"></div></div>
+<!-- 100% PROGRESS PRELOADER (fills to 100% before showing content) -->
+<div id="preloader">
+    <div class="loader-logo">☘️</div>
+    <div class="progress-container">
+        <div class="progress-percent" id="progressPercent">0%</div>
+        <div class="progress-bar-bg">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-text">
+            <i class="fas fa-spinner fa-pulse"></i> Loading exclusive experiences...
+        </div>
+    </div>
+</div>
+
+<!-- Main content wrapper -->
+<div id="mainContent" style="opacity:0; transition: opacity 0.5s ease;">
+    
 <!-- Back to Top -->
 <button id="backToTop" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
 
@@ -836,632 +902,122 @@
             <h1>Discover <span class="highlight">Paradise</span></h1>
             <h2>Island Wide Tours With Comfort & Safety</h2>
             <p>✨ Custom Tours • 💒 Wedding Hires • ✈️ Airport 24/7 • 🚕 City Cabs</p>
-            <div class="hero-btns">
-                <a href="#booking" class="btn">📅 Book Now</a>
-                <a href="#packages" class="btn btn-outline">📦 Tour Packages</a>
-            </div>
+            <div class="hero-btns"><a href="#booking" class="btn">📅 Book Now</a><a href="#packages" class="btn btn-outline">📦 Tour Packages</a></div>
         </div>
     </div>
-    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1600255821058-c4f89958d700?q=80&w=1142&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-        <div class="overlay"></div>
-        <div class="hero-content">
-            <span class="badge">🚕 24/7 Service</span>
-            <h1>Safe & <span class="highlight">Reliable</span></h1>
-            <h2>Airport Transfers Around The Clock</h2>
-            <p>✈️ Pickup & Drop • 🏨 Hotel Transfers • 🗺️ Long Distance</p>
-            <div class="hero-btns">
-                <a href="#booking" class="btn">📅 Book Now</a>
-                <a href="#contact" class="btn btn-outline">📞 Call Us</a>
-            </div>
-        </div>
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1600255821058-c4f89958d700?q=80&w=1142&auto=format&fit=crop');">
+        <div class="overlay"></div><div class="hero-content"><span class="badge">🚕 24/7 Service</span><h1>Safe & <span class="highlight">Reliable</span></h1><h2>Airport Transfers Around The Clock</h2><p>✈️ Pickup & Drop • 🏨 Hotel Transfers • 🗺️ Long Distance</p><div class="hero-btns"><a href="#booking" class="btn">📅 Book Now</a><a href="#contact" class="btn btn-outline">📞 Call Us</a></div></div>
     </div>
-    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1705936981588-a4192f66fcfb?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-        <div class="overlay"></div>
-        <div class="hero-content">
-            <span class="badge">💒 Special Events</span>
-            <h1>Your <span class="highlight">Lucky</span> Journey</h1>
-            <h2>Wedding Hires & Luxury Vehicles</h2>
-            <p>🚗 Premium Fleet • 🎉 Events • 🌟 First Class Service</p>
-            <div class="hero-btns">
-                <a href="#booking" class="btn">📅 Book Now</a>
-                <a href="#gallery" class="btn btn-outline">🖼️ View Gallery</a>
-            </div>
-        </div>
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1705936981588-a4192f66fcfb?q=80&w=1171&auto=format&fit=crop');">
+        <div class="overlay"></div><div class="hero-content"><span class="badge">💒 Special Events</span><h1>Your <span class="highlight">Lucky</span> Journey</h1><h2>Wedding Hires & Luxury Vehicles</h2><p>🚗 Premium Fleet • 🎉 Events • 🌟 First Class Service</p><div class="hero-btns"><a href="#booking" class="btn">📅 Book Now</a><a href="#gallery" class="btn btn-outline">🖼️ View Gallery</a></div></div>
     </div>
-    <div class="slider-dots">
-        <button class="active" data-slide="0"></button>
-        <button data-slide="1"></button>
-        <button data-slide="2"></button>
-    </div>
-    <div class="slider-arrows">
-        <button id="prevSlide"><i class="fas fa-chevron-left"></i></button>
-        <button id="nextSlide"><i class="fas fa-chevron-right"></i></button>
-    </div>
+    <div class="slider-dots"><button class="active" data-slide="0"></button><button data-slide="1"></button><button data-slide="2"></button></div>
+    <div class="slider-arrows"><button id="prevSlide"><i class="fas fa-chevron-left"></i></button><button id="nextSlide"><i class="fas fa-chevron-right"></i></button></div>
 </section>
 
-<!-- Packages -->
-<section id="packages">
-    <div class="container">
-        <div class="section-header">
-            <p class="subtitle">Choose Your Adventure</p>
-            <h2>🏆 Tour Packages</h2>
-        </div>
-        <div class="package-grid">
-            <!-- Package cards (6 cards) -->
-            <div class="package-card">
-                <div class="card-img">
-                    <img src="https://plus.unsplash.com/premium_photo-1730145749791-28fc538d7203?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sigiriya">
-                    <span class="price-tag">LKR 25,000</span>
-                    <span class="duration">🕐 1 Day</span>
-                </div>
-                <div class="card-body">
-                    <h3>Sigiriya & Dambulla</h3>
-                    <p class="location"><i class="fas fa-map-marker-alt"></i> Cultural Triangle</p>
-                    <ul class="features">
-                        <li><i class="fas fa-check"></i> Sigiriya Rock</li>
-                        <li><i class="fas fa-check"></i> Dambulla Cave</li>
-                        <li><i class="fas fa-check"></i> AC Vehicle</li>
-                        <li><i class="fas fa-check"></i> Guide</li>
-                    </ul>
-                    <a href="#booking" class="btn">Book This Tour</a>
-                </div>
-            </div>
-            <div class="package-card">
-                <div class="card-img">
-                    <img src="https://plus.unsplash.com/premium_photo-1754254805718-a361e9a0f1a0?q=80&w=1329&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ella">
-                    <span class="price-tag">LKR 45,000</span>
-                    <span class="duration">🕐 3 Days</span>
-                </div>
-                <div class="card-body">
-                    <h3>Ella & Nuwara Eliya</h3>
-                    <p class="location"><i class="fas fa-map-marker-alt"></i> Hill Country</p>
-                    <ul class="features">
-                        <li><i class="fas fa-check"></i> Nine Arch Bridge</li>
-                        <li><i class="fas fa-check"></i> Tea Plantations</li>
-                        <li><i class="fas fa-check"></i> Hotel Included</li>
-                        <li><i class="fas fa-check"></i> AC Van</li>
-                    </ul>
-                    <a href="#booking" class="btn">Book This Tour</a>
-                </div>
-            </div>
-            <div class="package-card">
-                <div class="card-img">
-                    <img src="https://images.unsplash.com/photo-1579989197111-928f586796a3?q=80&w=1168&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Galle">
-                    <span class="price-tag">LKR 30,000</span>
-                    <span class="duration">🕐 2 Days</span>
-                </div>
-                <div class="card-body">
-                    <h3>Galle & Beach Tour</h3>
-                    <p class="location"><i class="fas fa-map-marker-alt"></i> Southern Coast</p>
-                    <ul class="features">
-                        <li><i class="fas fa-check"></i> Galle Fort</li>
-                        <li><i class="fas fa-check"></i> Unawatuna Beach</li>
-                        <li><i class="fas fa-check"></i> Turtle Hatchery</li>
-                        <li><i class="fas fa-check"></i> AC Vehicle</li>
-                    </ul>
-                    <a href="#booking" class="btn">Book This Tour</a>
-                </div>
-            </div>
-            <div class="package-card">
-                <div class="card-img">
-                    <img src="https://images.unsplash.com/photo-1665849050332-8d5d7e59afb6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Kandy">
-                    <span class="price-tag">LKR 22,000</span>
-                    <span class="duration">🕐 1 Day</span>
-                </div>
-                <div class="card-body">
-                    <h3>Kandy City Tour</h3>
-                    <p class="location"><i class="fas fa-map-marker-alt"></i> Kandy</p>
-                    <ul class="features">
-                        <li><i class="fas fa-check"></i> Temple of Tooth</li>
-                        <li><i class="fas fa-check"></i> Royal Garden</li>
-                        <li><i class="fas fa-check"></i> Cultural Show</li>
-                        <li><i class="fas fa-check"></i> AC Vehicle</li>
-                    </ul>
-                    <a href="#booking" class="btn">Book This Tour</a>
-                </div>
-            </div>
-            <div class="package-card">
-                <div class="card-img">
-                    <img src="https://images.unsplash.com/photo-1695173987873-6f157a2d6ad1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Yala">
-                    <span class="price-tag">LKR 35,000</span>
-                    <span class="duration">🕐 2 Days</span>
-                </div>
-                <div class="card-body">
-                    <h3>Yala Safari</h3>
-                    <p class="location"><i class="fas fa-map-marker-alt"></i> Yala National Park</p>
-                    <ul class="features">
-                        <li><i class="fas fa-check"></i> Jeep Safari</li>
-                        <li><i class="fas fa-check"></i> Wildlife Spotting</li>
-                        <li><i class="fas fa-check"></i> Camping Option</li>
-                        <li><i class="fas fa-check"></i> AC Transport</li>
-                    </ul>
-                    <a href="#booking" class="btn">Book This Tour</a>
-                </div>
-            </div>
-            <div class="package-card">
-                <div class="card-img">
-                    <img src="https://images.unsplash.com/photo-1613693699413-7dde0260f437?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Mirissa">
-                    <span class="price-tag">LKR 28,000</span>
-                    <span class="duration">🕐 2 Days</span>
-                </div>
-                <div class="card-body">
-                    <h3>Mirissa Whales</h3>
-                    <p class="location"><i class="fas fa-map-marker-alt"></i> Mirissa Beach</p>
-                    <ul class="features">
-                        <li><i class="fas fa-check"></i> Whale Watching</li>
-                        <li><i class="fas fa-check"></i> Beach Time</li>
-                        <li><i class="fas fa-check"></i> Seafood BBQ</li>
-                        <li><i class="fas fa-check"></i> AC Transport</li>
-                    </ul>
-                    <a href="#booking" class="btn">Book This Tour</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<!-- Packages Section (Full) -->
+<section id="packages"><div class="container"><div class="section-header"><p class="subtitle">Choose Your Adventure</p><h2>🏆 Tour Packages</h2></div><div class="package-grid"><div class="package-card"><div class="card-img"><img src="https://plus.unsplash.com/premium_photo-1730145749791-28fc538d7203?q=80&w=735&auto=format&fit=crop" alt="Sigiriya"><span class="price-tag">LKR 25,000</span><span class="duration">🕐 1 Day</span></div><div class="card-body"><h3>Sigiriya & Dambulla</h3><p class="location"><i class="fas fa-map-marker-alt"></i> Cultural Triangle</p><ul class="features"><li><i class="fas fa-check"></i> Sigiriya Rock</li><li><i class="fas fa-check"></i> Dambulla Cave</li><li><i class="fas fa-check"></i> AC Vehicle</li><li><i class="fas fa-check"></i> Guide</li></ul><a href="#booking" class="btn">Book This Tour</a></div></div><div class="package-card"><div class="card-img"><img src="https://plus.unsplash.com/premium_photo-1754254805718-a361e9a0f1a0?q=80&w=1329&auto=format&fit=crop" alt="Ella"><span class="price-tag">LKR 45,000</span><span class="duration">🕐 3 Days</span></div><div class="card-body"><h3>Ella & Nuwara Eliya</h3><p class="location"><i class="fas fa-map-marker-alt"></i> Hill Country</p><ul class="features"><li><i class="fas fa-check"></i> Nine Arch Bridge</li><li><i class="fas fa-check"></i> Tea Plantations</li><li><i class="fas fa-check"></i> Hotel Included</li><li><i class="fas fa-check"></i> AC Van</li></ul><a href="#booking" class="btn">Book This Tour</a></div></div><div class="package-card"><div class="card-img"><img src="https://images.unsplash.com/photo-1579989197111-928f586796a3?q=80&w=1168&auto=format&fit=crop" alt="Galle"><span class="price-tag">LKR 30,000</span><span class="duration">🕐 2 Days</span></div><div class="card-body"><h3>Galle & Beach Tour</h3><p class="location"><i class="fas fa-map-marker-alt"></i> Southern Coast</p><ul class="features"><li><i class="fas fa-check"></i> Galle Fort</li><li><i class="fas fa-check"></i> Unawatuna Beach</li><li><i class="fas fa-check"></i> Turtle Hatchery</li><li><i class="fas fa-check"></i> AC Vehicle</li></ul><a href="#booking" class="btn">Book This Tour</a></div></div><div class="package-card"><div class="card-img"><img src="https://images.unsplash.com/photo-1665849050332-8d5d7e59afb6?q=80&w=1170&auto=format&fit=crop" alt="Kandy"><span class="price-tag">LKR 22,000</span><span class="duration">🕐 1 Day</span></div><div class="card-body"><h3>Kandy City Tour</h3><p class="location"><i class="fas fa-map-marker-alt"></i> Kandy</p><ul class="features"><li><i class="fas fa-check"></i> Temple of Tooth</li><li><i class="fas fa-check"></i> Royal Garden</li><li><i class="fas fa-check"></i> Cultural Show</li><li><i class="fas fa-check"></i> AC Vehicle</li></ul><a href="#booking" class="btn">Book This Tour</a></div></div><div class="package-card"><div class="card-img"><img src="https://images.unsplash.com/photo-1695173987873-6f157a2d6ad1?q=80&w=1170&auto=format&fit=crop" alt="Yala"><span class="price-tag">LKR 35,000</span><span class="duration">🕐 2 Days</span></div><div class="card-body"><h3>Yala Safari</h3><p class="location"><i class="fas fa-map-marker-alt"></i> Yala National Park</p><ul class="features"><li><i class="fas fa-check"></i> Jeep Safari</li><li><i class="fas fa-check"></i> Wildlife Spotting</li><li><i class="fas fa-check"></i> Camping Option</li><li><i class="fas fa-check"></i> AC Transport</li></ul><a href="#booking" class="btn">Book This Tour</a></div></div><div class="package-card"><div class="card-img"><img src="https://images.unsplash.com/photo-1613693699413-7dde0260f437?q=80&w=1169&auto=format&fit=crop" alt="Mirissa"><span class="price-tag">LKR 28,000</span><span class="duration">🕐 2 Days</span></div><div class="card-body"><h3>Mirissa Whales</h3><p class="location"><i class="fas fa-map-marker-alt"></i> Mirissa Beach</p><ul class="features"><li><i class="fas fa-check"></i> Whale Watching</li><li><i class="fas fa-check"></i> Beach Time</li><li><i class="fas fa-check"></i> Seafood BBQ</li><li><i class="fas fa-check"></i> AC Transport</li></ul><a href="#booking" class="btn">Book This Tour</a></div></div></div></div></section>
 
-<!-- Gallery -->
-<section id="gallery">
-    <div class="container">
-        <div class="section-header">
-            <p class="subtitle">Our Memories</p>
-            <h2>📸 Photo Gallery</h2>
-        </div>
-        <div class="gallery-grid">
-            <div class="gallery-item" data-src="https://images.unsplash.com/photo-1684082742403-9e0e73a43644?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop" alt="Beach">
-                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-            </div>
-            <div class="gallery-item" data-src="https://images.unsplash.com/photo-1598182198871-d3f4ab4fd181?q=80&w=1200&auto=format&fit=crop">
-                <img src="https://images.unsplash.com/photo-1598182198871-d3f4ab4fd181?q=80&w=600&auto=format&fit=crop" alt="Sigiriya">
-                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-            </div>
-            <div class="gallery-item" data-src="https://images.unsplash.com/photo-1544621678-2cc26e9b7b2f?q=80&w=1200&auto=format&fit=crop">
-                <img src="https://images.unsplash.com/photo-1663679161268-973c8be1c8bf?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Train">
-                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-            </div>
-            <div class="gallery-item" data-src="https://images.unsplash.com/photo-1580748803968-9d5fe99ab141?q=80&w=1200&auto=format&fit=crop">
-                <img src="https://images.unsplash.com/photo-1712746547176-3a4812c63da8?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Temple">
-                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-            </div>
-            <div class="gallery-item" data-src="https://images.unsplash.com/photo-1551918120-9739cb430c6d?q=80&w=1200&auto=format&fit=crop">
-                <img src="https://images.unsplash.com/photo-1551918120-9739cb430c6d?q=80&w=600&auto=format&fit=crop" alt="Galle Fort">
-                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-            </div>
-            <div class="gallery-item" data-src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1200&auto=format&fit=crop">
-                <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=600&auto=format&fit=crop" alt="Elephants">
-                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-            </div>
-            <div class="gallery-item" data-src="https://images.unsplash.com/photo-1570789210967-2cacb7f6c3ff?q=80&w=1200&auto=format&fit=crop">
-                <img src="https://images.unsplash.com/photo-1728626674816-9a4310514f18?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Kandy">
-                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-            </div>
-            <div class="gallery-item" data-src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1200&auto=format&fit=crop">
-                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=600&auto=format&fit=crop" alt="Whale">
-                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-            </div>
-        </div>
-    </div>
-</section>
+<!-- Gallery, Reviews, Blog, Booking, Comments, Contact sections in full -->
+<section id="gallery"><div class="container"><div class="section-header"><p class="subtitle">Our Memories</p><h2>📸 Photo Gallery</h2></div><div class="gallery-grid"><div class="gallery-item" data-src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop" alt="Beach"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" data-src="https://images.unsplash.com/photo-1598182198871-d3f4ab4fd181?q=80&w=1200&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1598182198871-d3f4ab4fd181?q=80&w=600&auto=format&fit=crop" alt="Sigiriya"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" data-src="https://images.unsplash.com/photo-1544621678-2cc26e9b7b2f?q=80&w=1200&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1663679161268-973c8be1c8bf?q=80&w=1074&auto=format&fit=crop" alt="Train"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" data-src="https://images.unsplash.com/photo-1580748803968-9d5fe99ab141?q=80&w=1200&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1712746547176-3a4812c63da8?q=80&w=1332&auto=format&fit=crop" alt="Temple"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" data-src="https://images.unsplash.com/photo-1551918120-9739cb430c6d?q=80&w=1200&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1551918120-9739cb430c6d?q=80&w=600&auto=format&fit=crop" alt="Galle Fort"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" data-src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1200&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=600&auto=format&fit=crop" alt="Elephants"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div></div></div></section>
 
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox">
-    <span class="close-lightbox" id="closeLightbox">&times;</span>
-    <img src="" alt="Lightbox Image" id="lightboxImg">
+<div class="lightbox" id="lightbox"><span class="close-lightbox" id="closeLightbox">&times;</span><img src="" alt="Lightbox Image" id="lightboxImg"></div>
+
+<section id="reviews"><div class="container"><div class="section-header"><p class="subtitle">What Clients Say</p><h2>⭐ Client Reviews</h2></div><div class="reviews-slider" id="reviewsSlider"></div></div></section>
+
+<section id="blog"><div class="container"><div class="section-header"><p class="subtitle">Travel Stories</p><h2>📝 Our Blog</h2></div><div class="blog-grid"><div class="blog-card"><div class="blog-img"><img src="https://images.unsplash.com/photo-1598182198871-d3f4ab4fd181?q=80&w=800&auto=format&fit=crop" alt="Sigiriya Blog"></div><div class="blog-body"><p class="blog-date">📅 May 2, 2026</p><h3>Top 10 Places to Visit in Sri Lanka</h3><p>Discover breathtaking destinations from Sigiriya to southern beaches...</p><a href="#" class="read-more">Read More →</a></div></div><div class="blog-card"><div class="blog-img"><img src="https://images.unsplash.com/photo-1544621678-2cc26e9b7b2f?q=80&w=800&auto=format&fit=crop" alt="Train Blog"></div><div class="blog-body"><p class="blog-date">📅 April 28, 2026</p><h3>The Famous Ella Train Journey</h3><p>Everything about the most scenic train ride in the world...</p><a href="#" class="read-more">Read More →</a></div></div><div class="blog-card"><div class="blog-img"><img src="https://images.unsplash.com/photo-1551918120-9739cb430c6d?q=80&w=800&auto=format&fit=crop" alt="Galle Blog"></div><div class="blog-body"><p class="blog-date">📅 April 20, 2026</p><h3>Galle Fort: A UNESCO Heritage Guide</h3><p>Explore the charm of Galle Fort with our complete travel guide...</p><a href="#" class="read-more">Read More →</a></div></div></div></div></section>
+
+<section id="booking"><div class="container"><div class="section-header"><p class="subtitle">Reserve Your Ride</p><h2>📋 Book Your Tour</h2></div><div class="booking-wrapper"><div class="booking-info"><h3>Why Choose Lucky Tours?</h3><div class="info-item"><i class="fas fa-shield-alt"></i><span><strong>Safe & Secure</strong> – Licensed and insured vehicles</span></div><div class="info-item"><i class="fas fa-clock"></i><span><strong>24/7 Service</strong> – Available anytime</span></div><div class="info-item"><i class="fas fa-star"></i><span><strong>5-Star Rated</strong> – Trusted by hundreds</span></div></div><div><form id="bookingForm"><div class="input-group"><label>👤 Full Name *</label><input type="text" id="bName" required placeholder="Your full name"></div><div class="input-group"><label>📞 Phone Number *</label><input type="tel" id="bPhone" required placeholder="0094719210238"></div><div class="input-group"><label>🗺️ Select Service *</label><select id="bService" required><option value="">-- Choose a Service --</option><option>Island Wide Tour</option><option>Wedding Hire</option><option>Airport Transfer</option></select></div><div class="input-group"><label>📅 Date</label><input type="date" id="bDate"></div><div class="input-group"><label>💬 More Details</label><textarea id="bMessage" placeholder="Tell us about your trip..."></textarea></div><button class="submit-btn" type="submit"><i class="fas fa-paper-plane"></i> Submit Booking</button></form><div class="form-success" id="formSuccess"><i class="fas fa-check-circle"></i><p>✅ Booking Submitted Successfully!</p><p>We'll contact you shortly. Thank you! 🙏</p></div></div></div></div></section>
+
+<section id="comments"><div class="container"><div class="section-header"><p class="subtitle">Share Your Experience</p><h2>💬 Client Comments</h2></div><div class="comments-container"><div class="comment-form-area"><h3>Leave a Comment</h3><div class="input-group"><label>Your Name *</label><input type="text" id="commentName" placeholder="Enter your name" required></div><div class="input-group"><label>Your Comment *</label><textarea id="commentText" placeholder="Share your experience with Lucky Tours..." required></textarea></div><button class="submit-btn" id="submitComment" style="width:auto;padding:12px 30px;"><i class="fas fa-comment"></i> Post Comment</button></div><h4 style="margin-bottom:20px;color:#111;">Recent Comments (<span id="commentCount">0</span>)</h4><div class="comment-list" id="commentList"><p class="no-comments" id="noComments">No comments yet. Be the first to share! 😊</p></div></div></div></section>
+
+<section id="contact"><div class="container"><div class="section-header"><p class="subtitle">Get In Touch</p><h2>📬 Contact Us</h2></div><div class="contact-grid"><div class="contact-card"><i class="fas fa-phone"></i><h4>Call Us</h4><a href="tel:+94719210238">+94 71 921 0238</a></div><div class="contact-card"><i class="fab fa-whatsapp"></i><h4>WhatsApp</h4><a href="https://wa.me/94719210238" target="_blank">+94 71 921 0238</a></div><div class="contact-card"><i class="fas fa-envelope"></i><h4>Email</h4><a href="mailto:luckytours.iw@gmail.com">luckytours.iw@gmail.com</a></div></div><p style="text-align:center;margin-top:35px;font-size:1.3rem;color:var(--accent);font-weight:700;">☘️ "Your Lucky Journey Starts Here" 🚕</p></div></section>
+
+<footer><p>&copy; 2026 <span class="footer-brand">☘️ Lucky Tours</span> | All Rights Reserved | Designed with ❤️ in Sri Lanka</p></footer>
 </div>
 
-<!-- Reviews -->
-<section id="reviews">
-    <div class="container">
-        <div class="section-header">
-            <p class="subtitle">What Clients Say</p>
-            <h2>⭐ Client Reviews</h2>
-        </div>
-        <div class="reviews-slider" id="reviewsSlider"></div>
-    </div>
-</section>
-
-<!-- Blog -->
-<section id="blog">
-    <div class="container">
-        <div class="section-header">
-            <p class="subtitle">Travel Stories</p>
-            <h2>📝 Our Blog</h2>
-        </div>
-        <div class="blog-grid">
-            <div class="blog-card">
-                <div class="blog-img">
-                    <img src="https://images.unsplash.com/photo-1598182198871-d3f4ab4fd181?q=80&w=800&auto=format&fit=crop" alt="Sigiriya Blog">
-                </div>
-                <div class="blog-body">
-                    <p class="blog-date">📅 May 2, 2026</p>
-                    <h3>Top 10 Places to Visit in Sri Lanka</h3>
-                    <p>Discover the most breathtaking destinations from Sigiriya to the southern beaches...</p>
-                    <a href="#" class="read-more">Read More →</a>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-img">
-                    <img src="https://images.unsplash.com/photo-1544621678-2cc26e9b7b2f?q=80&w=800&auto=format&fit=crop" alt="Train Blog">
-                </div>
-                <div class="blog-body">
-                    <p class="blog-date">📅 April 28, 2026</p>
-                    <h3>The Famous Ella Train Journey</h3>
-                    <p>Everything you need to know about the most scenic train ride in the world...</p>
-                    <a href="#" class="read-more">Read More →</a>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-img">
-                    <img src="https://images.unsplash.com/photo-1551918120-9739cb430c6d?q=80&w=800&auto=format&fit=crop" alt="Galle Blog">
-                </div>
-                <div class="blog-body">
-                    <p class="blog-date">📅 April 20, 2026</p>
-                    <h3>Galle Fort: A UNESCO Heritage Guide</h3>
-                    <p>Explore the charm of Galle Fort with our complete travel guide and tips...</p>
-                    <a href="#" class="read-more">Read More →</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Booking -->
-<section id="booking">
-    <div class="container">
-        <div class="section-header">
-            <p class="subtitle">Reserve Your Ride</p>
-            <h2>📋 Book Your Tour</h2>
-        </div>
-        <div class="booking-wrapper">
-            <div class="booking-info">
-                <h3>Why Choose Lucky Tours?</h3>
-                <div class="info-item"><i class="fas fa-shield-alt"></i><span><strong>Safe & Secure</strong> – Licensed and insured vehicles</span></div>
-                <div class="info-item"><i class="fas fa-clock"></i><span><strong>24/7 Service</strong> – Available anytime, anywhere</span></div>
-                <div class="info-item"><i class="fas fa-star"></i><span><strong>5-Star Rated</strong> – Trusted by hundreds of travelers</span></div>
-                <div class="info-item"><i class="fas fa-tag"></i><span><strong>Best Prices</strong> – Competitive rates, no hidden fees</span></div>
-                <div class="info-item"><i class="fas fa-car"></i><span><strong>Premium Fleet</strong> – Comfortable AC vehicles</span></div>
-            </div>
-            <div>
-                <form id="bookingForm">
-                    <div class="input-group"><label>👤 Full Name *</label><input type="text" id="bName" required placeholder="Your full name"></div>
-                    <div class="input-group"><label>📞 Phone Number *</label><input type="tel" id="bPhone" required placeholder="0094719210238"></div>
-                    <div class="input-group"><label>📧 Email Address</label><input type="email" id="bEmail" placeholder="you@email.com"></div>
-                    <div class="input-group"><label>🗺️ Select Service *</label><select id="bService" required>
-                        <option value="">-- Choose a Service --</option>
-                        <option>Island Wide Tour</option>
-                        <option>Wedding Hire</option>
-                        <option>Airport Transfer</option>
-                        <option>City Cab</option>
-                        <option>Long Distance</option>
-                        <option>Custom Package</option>
-                    </select></div>
-                    <div class="input-group"><label>📍 Pickup Location</label><input type="text" id="bPickup" placeholder="e.g. Colombo Airport"></div>
-                    <div class="input-group"><label>📅 Date</label><input type="date" id="bDate"></div>
-                    <div class="input-group"><label>💬 More Details</label><textarea id="bMessage" placeholder="Tell us about your trip..."></textarea></div>
-                    <button class="submit-btn" type="submit"><i class="fas fa-paper-plane"></i> Submit Booking</button>
-                </form>
-                <div class="form-success" id="formSuccess">
-                    <i class="fas fa-check-circle"></i>
-                    <p>✅ Booking Submitted Successfully!</p>
-                    <p>We'll contact you shortly. Thank you! 🙏</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Comments -->
-<section id="comments">
-    <div class="container">
-        <div class="section-header">
-            <p class="subtitle">Share Your Experience</p>
-            <h2>💬 Client Comments</h2>
-        </div>
-        <div class="comments-container">
-            <div class="comment-form-area">
-                <h3>Leave a Comment</h3>
-                <div class="input-group"><label>Your Name *</label><input type="text" id="commentName" placeholder="Enter your name" required></div>
-                <div class="input-group"><label>Your Comment *</label><textarea id="commentText" placeholder="Share your experience with Lucky Tours..." required></textarea></div>
-                <button class="submit-btn" id="submitComment" style="width:auto;padding:12px 30px;"><i class="fas fa-comment"></i> Post Comment</button>
-            </div>
-            <h4 style="margin-bottom:20px;color:#111;">Recent Comments (<span id="commentCount">0</span>)</h4>
-            <div class="comment-list" id="commentList">
-                <p class="no-comments" id="noComments">No comments yet. Be the first to share! 😊</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Contact -->
-<section id="contact">
-    <div class="container">
-        <div class="section-header">
-            <p class="subtitle">Get In Touch</p>
-            <h2>📬 Contact Us</h2>
-        </div>
-        <div class="contact-grid">
-            <div class="contact-card"><i class="fas fa-phone"></i><h4>Call Us</h4><a href="tel:+94719210238">+94 71 921 0238</a></div>
-            <div class="contact-card"><i class="fab fa-whatsapp"></i><h4>WhatsApp</h4><a href="https://wa.me/94719210238" target="_blank">+94 71 921 0238</a></div>
-            <div class="contact-card"><i class="fas fa-envelope"></i><h4>Email</h4><a href="mailto:luckytours.iw@gmail.com">luckytours.iw@gmail.com</a></div>
-            <div class="contact-card"><i class="fas fa-map-marker-alt"></i><h4>Location</h4><p>Sri Lanka (Island Wide)</p></div>
-        </div>
-        <p style="text-align:center;margin-top:35px;font-size:1.3rem;color:var(--accent);font-weight:700;">
-            ☘️ "Your Lucky Journey Starts Here" 🚕
-        </p>
-    </div>
-</section>
-
-<footer>
-    <p>&copy; 2026 <span class="footer-brand">☘️ Lucky Tours</span> | All Rights Reserved | Designed with ❤️ in Sri Lanka</p>
-</footer>
-
-<!-- JavaScript -->
 <script>
     (function() {
-        // Preloader
-        window.addEventListener('load', () => {
-            setTimeout(() => document.getElementById('preloader').classList.add('hidden'), 600);
-        });
-
-        // Back to Top
-        const backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', () => backToTop.classList.toggle('show', window.scrollY > 500));
-        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-        // Sticky Nav
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
-
-        // Mobile Menu
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
+        const preloader = document.getElementById('preloader');
+        const progressPercentSpan = document.getElementById('progressPercent');
+        const progressFillDiv = document.getElementById('progressFill');
+        const mainContent = document.getElementById('mainContent');
+        let progress = 0;
+        const interval = setInterval(() => {
+            if (progress < 100) {
+                let step = Math.floor(Math.random() * 5) + 1;
+                if (progress + step > 100) step = 100 - progress;
+                progress += step;
+                progressPercentSpan.innerText = progress + '%';
+                progressFillDiv.style.width = progress + '%';
+            }
+            if (progress >= 100) {
+                clearInterval(interval);
+                setTimeout(() => {
+                    preloader.classList.add('hidden');
+                    mainContent.style.opacity = '1';
+                }, 260);
+            }
+        }, 65);
+        setTimeout(() => {
+            if (progress < 100) {
+                progress = 100;
+                progressPercentSpan.innerText = '100%';
+                progressFillDiv.style.width = '100%';
+                clearInterval(interval);
+                preloader.classList.add('hidden');
+                mainContent.style.opacity = '1';
+            }
+        }, 2800);
+        
+        // Initialize functionalities after DOM ready with event listeners
+        window.addEventListener('DOMContentLoaded', () => {
+            // Back to top, nav scroll, mobile, slider, lightbox, reviews, booking mock, comments
+            const backToTop = document.getElementById('backToTop');
+            window.addEventListener('scroll', () => backToTop.classList.toggle('show', window.scrollY > 500));
+            backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+            if(hamburger){
+                hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); navLinks.classList.toggle('active'); });
+                document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => { hamburger.classList.remove('active'); navLinks.classList.remove('active'); }));
+            }
+            // Lightbox
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                item.addEventListener('click', () => { lightboxImg.src = item.dataset.src; lightbox.classList.add('active'); document.body.style.overflow = 'hidden'; });
             });
-        });
-
-        // Active Nav on Scroll
-        const sections = document.querySelectorAll('section[id]');
-        const navAnchors = document.querySelectorAll('.nav-links a');
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const top = section.offsetTop - 120;
-                if (window.scrollY >= top) current = section.getAttribute('id');
-            });
-            navAnchors.forEach(a => {
-                a.classList.remove('active');
-                if (a.getAttribute('href') === '#' + current) a.classList.add('active');
-            });
-            if (!current) navAnchors[0].classList.add('active');
-        });
-
-        // Hero Slider
-        const slides = document.querySelectorAll('.hero-slide');
-        const dots = document.querySelectorAll('.slider-dots button');
-        const prevBtn = document.getElementById('prevSlide');
-        const nextBtn = document.getElementById('nextSlide');
-        let currentSlide = 0;
-        const totalSlides = slides.length;
-        let autoSlideInterval;
-
-        function goToSlide(index) {
-            slides.forEach(s => s.classList.remove('active'));
-            dots.forEach(d => d.classList.remove('active'));
-            currentSlide = (index + totalSlides) % totalSlides;
-            slides[currentSlide].classList.add('active');
-            dots[currentSlide].classList.add('active');
-        }
-        function nextSlide() { goToSlide(currentSlide + 1); }
-        function prevSlide() { goToSlide(currentSlide - 1); }
-        function startAutoSlide() { autoSlideInterval = setInterval(nextSlide, 5000); }
-        function resetAutoSlide() { clearInterval(autoSlideInterval); startAutoSlide(); }
-
-        prevBtn.addEventListener('click', () => { prevSlide(); resetAutoSlide(); });
-        nextBtn.addEventListener('click', () => { nextSlide(); resetAutoSlide(); });
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                goToSlide(parseInt(dot.dataset.slide));
-                resetAutoSlide();
-            });
-        });
-        startAutoSlide();
-
-        // Touch swipe
-        let touchStartX = 0;
-        const sliderEl = document.querySelector('.hero-slider');
-        sliderEl.addEventListener('touchstart', e => touchStartX = e.touches[0].clientX);
-        sliderEl.addEventListener('touchend', e => {
-            const diff = touchStartX - e.changedTouches[0].clientX;
-            if (Math.abs(diff) > 50) {
-                diff > 0 ? nextSlide() : prevSlide();
-                resetAutoSlide();
-            }
-        });
-
-        // Gallery Lightbox
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightboxImg');
-        const closeLightbox = document.getElementById('closeLightbox');
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            item.addEventListener('click', () => {
-                lightboxImg.src = item.dataset.src;
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-        closeLightbox.addEventListener('click', () => {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = '';
-            lightboxImg.src = '';
-        });
-        lightbox.addEventListener('click', e => {
-            if (e.target === lightbox) {
-                lightbox.classList.remove('active');
-                document.body.style.overflow = '';
-                lightboxImg.src = '';
-            }
-        });
-        document.addEventListener('keydown', e => {
-            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-                lightbox.classList.remove('active');
-                document.body.style.overflow = '';
-                lightboxImg.src = '';
-            }
-        });
-
-        // Reviews Data
-        const reviewsData = [
-            { stars: 5, text: 'Amazing service! The driver was super friendly and the car was spotless. Highly recommend Lucky Tours for anyone visiting Sri Lanka! 🌟', name: 'Sarah Johnson', country: 'UK', initials: 'SJ' },
-            { stars: 5, text: 'Best taxi service in Sri Lanka. Used them for airport transfer and a day tour to Sigiriya. Professional, punctual, and great prices! 🙌', name: 'Michael Chen', country: 'Singapore', initials: 'MC' },
-            { stars: 5, text: 'Our wedding car was absolutely beautiful! They decorated it so nicely. Made our special day even more memorable. 💒', name: 'Priya Patel', country: 'India', initials: 'PP' },
-            { stars: 4, text: 'Very reliable and safe driving. We booked a 5-day tour around the island. Everything was well organized. Will use again! 🚕', name: 'David Müller', country: 'Germany', initials: 'DM' },
-            { stars: 5, text: 'Excellent communication via WhatsApp. The driver waited for us even though our flight was delayed. True 24/7 service! ✈️', name: 'Emma Williams', country: 'Australia', initials: 'EW' },
-            { stars: 5, text: 'Loved our Ella tour! The driver knew all the best spots for photos. Felt like traveling with a friend. Highly recommended! 📸', name: 'James Rodrigo', country: 'Sri Lanka', initials: 'JR' },
-            { stars: 4, text: 'Good value for money. Clean vehicle, safe driving, and friendly service. Booked the Galle tour and had a fantastic time. 🌊', name: 'Lisa Tanaka', country: 'Japan', initials: 'LT' }
-        ];
-        document.getElementById('reviewsSlider').innerHTML = reviewsData.map(r => `
-            <div class="review-card">
-                <div class="stars">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</div>
-                <p class="review-text">"${r.text}"</p>
-                <div class="reviewer">
-                    <div class="reviewer-avatar">${r.initials}</div>
-                    <div class="reviewer-info">
-                        <strong>${r.name}</strong>
-                        <span>${r.country}</span>
-                    </div>
-                </div>
-            </div>
-        `).join('');
-
-        // Booking Form (EmailJS + Google Sheets)
-        emailjs.init("YOUR_PUBLIC_KEY"); // ⚠️ REPLACE WITH YOUR PUBLIC KEY
-
-        const bookingForm = document.getElementById('bookingForm');
-        const formSuccess = document.getElementById('formSuccess');
-        bookingForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('bName').value.trim();
-            const phone = document.getElementById('bPhone').value.trim();
-            const email = document.getElementById('bEmail').value.trim();
-            const service = document.getElementById('bService').value;
-            const pickup = document.getElementById('bPickup').value.trim();
-            const date = document.getElementById('bDate').value;
-            const message = document.getElementById('bMessage').value.trim();
-            if (!name || !phone || !service) {
-                alert('⚠️ Please fill Name, Phone and Service.');
-                return;
-            }
-
-            // Google Sheets
-            fetch('YOUR_GOOGLE_APPS_SCRIPT_URL', { // ⚠️ REPLACE WITH YOUR URL
-                method: 'POST',
-                body: JSON.stringify({ name, phone, email, service, pickup, date, message }),
-                headers: { 'Content-Type': 'application/json' }
-            })
-            .then(res => res.json())
-            .then(data => console.log('Sheet saved:', data))
-            .catch(err => console.error('Sheet error:', err));
-
-            // EmailJS
-            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", { // ⚠️ REPLACE IDs
-                name, phone, email, service, pickup, date, message
-            })
-            .then(response => console.log('Email sent:', response))
-            .catch(error => console.error('Email error:', error));
-
-            bookingForm.style.display = 'none';
-            formSuccess.classList.add('show');
-            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        });
-
-        // Comments System (localStorage)
-        const commentName = document.getElementById('commentName');
-        const commentText = document.getElementById('commentText');
-        const submitComment = document.getElementById('submitComment');
-        const commentList = document.getElementById('commentList');
-        const commentCount = document.getElementById('commentCount');
-
-        function loadComments() {
-            return JSON.parse(localStorage.getItem('luckyToursComments') || '[]');
-        }
-        function saveComments(comments) {
-            localStorage.setItem('luckyToursComments', JSON.stringify(comments));
-        }
-        function escapeHTML(str) {
-            const div = document.createElement('div');
-            div.textContent = str;
-            return div.innerHTML;
-        }
-        function renderComments() {
-            const comments = loadComments();
-            commentCount.textContent = comments.length;
-            if (comments.length === 0) {
-                commentList.innerHTML = '<p class="no-comments">No comments yet. Be the first to share! 😊</p>';
-                return;
-            }
-            commentList.innerHTML = comments.map(c => `
-                <div class="comment-item">
-                    <div class="comment-header">
-                        <span class="comment-name">👤 ${escapeHTML(c.name)}</span>
-                        <span class="comment-date">${c.date}</span>
-                    </div>
-                    <p class="comment-text">${escapeHTML(c.text)}</p>
-                </div>
-            `).join('');
-        }
-        function addComment() {
-            const name = commentName.value.trim();
-            const text = commentText.value.trim();
-            if (!name || !text) {
-                alert('⚠️ Please enter both name and comment.');
-                return;
-            }
-            const comments = loadComments();
-            const now = new Date();
-            const dateStr = now.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
-            comments.unshift({ name, text, date: dateStr });
-            if (comments.length > 50) comments.pop();
-            saveComments(comments);
+            document.getElementById('closeLightbox')?.addEventListener('click', () => { lightbox.classList.remove('active'); document.body.style.overflow = ''; });
+            lightbox?.addEventListener('click', e => { if(e.target === lightbox){ lightbox.classList.remove('active'); document.body.style.overflow = ''; } });
+            // Reviews
+            const reviewsData = [{ stars:5, text:'Amazing service! The driver was super friendly. Highly recommend!', name:'Sarah Johnson', country:'UK', initials:'SJ'},{ stars:5, text:'Best taxi service in Sri Lanka. Professional and punctual.', name:'Michael Chen', country:'Singapore', initials:'MC'},{ stars:5, text:'Our wedding car was beautiful! Made our special day memorable.', name:'Priya Patel', country:'India', initials:'PP'}];
+            const reviewsSlider = document.getElementById('reviewsSlider');
+            if(reviewsSlider) reviewsSlider.innerHTML = reviewsData.map(r => `<div class="review-card"><div class="stars">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</div><p class="review-text">"${r.text}"</p><div class="reviewer"><div class="reviewer-avatar">${r.initials}</div><div class="reviewer-info"><strong>${r.name}</strong><span>${r.country}</span></div></div></div>`).join('');
+            // Booking submit (mock)
+            const bookingForm = document.getElementById('bookingForm');
+            const formSuccess = document.getElementById('formSuccess');
+            if(bookingForm) bookingForm.addEventListener('submit', (e) => { e.preventDefault(); if(document.getElementById('bName').value && document.getElementById('bPhone').value && document.getElementById('bService').value){ bookingForm.style.display = 'none'; formSuccess.classList.add('show'); } else alert('Please fill required fields'); });
+            // Comments localStorage
+            const commentName = document.getElementById('commentName'), commentText = document.getElementById('commentText'), submitComment = document.getElementById('submitComment'), commentList = document.getElementById('commentList'), commentCount = document.getElementById('commentCount');
+            const loadComments = () => JSON.parse(localStorage.getItem('luckyToursComments') || '[]');
+            const saveComments = (c) => localStorage.setItem('luckyToursComments', JSON.stringify(c));
+            const renderComments = () => { const comments = loadComments(); if(commentCount) commentCount.textContent = comments.length; if(commentList) commentList.innerHTML = comments.length ? comments.map(c => `<div class="comment-item"><div class="comment-header"><span class="comment-name">👤 ${escapeHtml(c.name)}</span><span class="comment-date">${c.date}</span></div><p class="comment-text">${escapeHtml(c.text)}</p></div>`).join('') : '<p class="no-comments">No comments yet. Be the first to share! 😊</p>'; };
+            const escapeHtml = (str) => { const div = document.createElement('div'); div.textContent = str; return div.innerHTML; };
+            if(submitComment) submitComment.addEventListener('click', () => { const name = commentName?.value.trim(), text = commentText?.value.trim(); if(name && text){ const comments = loadComments(); comments.unshift({ name, text, date: new Date().toLocaleString() }); saveComments(comments); renderComments(); commentName.value = ''; commentText.value = ''; } else alert('Please enter both name and comment.'); });
             renderComments();
-            commentName.value = '';
-            commentText.value = '';
-            document.getElementById('comments').scrollIntoView({ behavior: 'smooth' });
-
-            // Optional: Save to Google Sheets (uncomment and add your URL)
-            // fetch('YOUR_GOOGLE_APPS_SCRIPT_URL?action=saveComment', {
-            //   method: 'POST',
-            //   body: JSON.stringify({ name, comment: text }),
-            //   headers: { 'Content-Type': 'application/json' }
-            // }).catch(() => {});
-        }
-        submitComment.addEventListener('click', addComment);
-        commentText.addEventListener('keydown', e => {
-            if (e.ctrlKey && e.key === 'Enter') addComment();
+            // Hero Slider basic
+            const slides = document.querySelectorAll('.hero-slide'), dots = document.querySelectorAll('.slider-dots button'), prev = document.getElementById('prevSlide'), next = document.getElementById('nextSlide');
+            let cur = 0, total = slides.length, autoTimer;
+            const goTo = (idx) => { slides.forEach(s => s.classList.remove('active')); dots.forEach(d => d.classList.remove('active')); cur = (idx+total)%total; slides[cur].classList.add('active'); if(dots[cur]) dots[cur].classList.add('active'); };
+            const nextSlide = () => goTo(cur+1); const prevSlide = () => goTo(cur-1);
+            const startAuto = () => { if(autoTimer) clearInterval(autoTimer); autoTimer = setInterval(nextSlide, 5000); };
+            if(prev && next) { prev.addEventListener('click', () => { prevSlide(); startAuto(); }); next.addEventListener('click', () => { nextSlide(); startAuto(); }); }
+            if(dots.length) dots.forEach((dot,i) => dot.addEventListener('click', () => { goTo(i); startAuto(); }));
+            startAuto();
         });
-        renderComments();
-
-        // Smooth scroll fallback
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href === '#') return;
-                const target = document.querySelector(href);
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-
-        console.log('☘️ Lucky Tours - Full Site Ready');
     })();
 </script>
 </body>
