@@ -1053,7 +1053,7 @@
                     saveComments(comments);
                     renderComments();
                     // ⚠️ Google Sheet Web App URL එක පහතින් replace කරන්න
-                    fetch('YOUR_GOOGLE_SHEET_WEB_APP_URL', {
+                    fetch('https://script.google.com/macros/s/AKfycbzk-7tJRDGtF--O-RBuJI8jO8Y2vxxXbHIQmqTRX9bqJ_GHL2lMjZTxZVQp7J8vGG06/exec', {
                         method: 'POST',
                         body: JSON.stringify(newComment),
                         headers: { 'Content-Type': 'text/plain' }
