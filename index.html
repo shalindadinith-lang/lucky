@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <style>
-        /* ========== EXISTING CSS (no changes) ========== */
+        /* ========== EXISTING CSS (no changes except removed arrow styles if any, but we keep them for safety) ========== */
         :root {
             --primary: #00a86b;
             --primary-dark: #008055;
@@ -50,7 +50,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* ========== PROGRESS BAR PRELOADER (100% before content) ========== */
+        /* ========== PROGRESS BAR PRELOADER ========== */
         #preloader {
             position: fixed;
             inset: 0;
@@ -261,7 +261,7 @@
             transform: rotate(-45deg) translate(6px, -6px);
         }
 
-        /* Hero Slider */
+        /* Hero Slider (no arrows) */
         .hero-slider {
             position: relative;
             height: 100vh;
@@ -389,37 +389,6 @@
             background: var(--accent);
             border-color: var(--accent);
             transform: scale(1.3);
-        }
-        .slider-arrows {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 3;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 25px;
-            pointer-events: none;
-        }
-        .slider-arrows button {
-            pointer-events: all;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: 2px solid #fff;
-            background: rgba(0,0,0,0.35);
-            color: #fff;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(5px);
-        }
-        .slider-arrows button:hover {
-            background: #fff;
-            color: #111;
         }
 
         /* Sections */
@@ -886,7 +855,7 @@
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- Hero Slider -->
+<!-- Hero Slider (arrows removed) -->
 <section class="hero-slider" id="home">
     <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop');">
         <div class="overlay"></div>
@@ -905,10 +874,10 @@
         <div class="overlay"></div><div class="hero-content"><span class="badge">💒 Special Events</span><h1>Your <span class="highlight">Lucky</span> Journey</h1><h2>Wedding Hires & Luxury Vehicles</h2><p>🚗 Premium Fleet • 🎉 Events • 🌟 First Class Service</p><div class="hero-btns"><a href="#booking" class="btn">📅 Book Now</a><a href="#gallery" class="btn btn-outline">🖼️ View Gallery</a></div></div>
     </div>
     <div class="slider-dots"><button class="active" data-slide="0"></button><button data-slide="1"></button><button data-slide="2"></button></div>
-    <div class="slider-arrows"><button id="prevSlide"><i class="fas fa-chevron-left"></i></button><button id="nextSlide"><i class="fas fa-chevron-right"></i></button></div>
+    <!-- arrows removed -->
 </section>
 
-<!-- Packages Section (LKR prices removed) -->
+<!-- Packages Section -->
 <section id="packages"><div class="container"><div class="section-header"><p class="subtitle">Choose Your Adventure</p><h2>🏆 Tour Packages</h2></div><div class="package-grid"><div class="package-card"><div class="card-img"><img src="https://plus.unsplash.com/premium_photo-1730145749791-28fc538d7203?q=80&w=735&auto=format&fit=crop" alt="Sigiriya"><span class="duration">🕐 1 Day</span></div><div class="card-body"><h3>Sigiriya & Dambulla</h3><p class="location"><i class="fas fa-map-marker-alt"></i> Cultural Triangle</p><ul class="features"><li><i class="fas fa-check"></i> Sigiriya Rock</li><li><i class="fas fa-check"></i> Dambulla Cave</li><li><i class="fas fa-check"></i> AC Vehicle</li><li><i class="fas fa-check"></i> Guide</li></ul><a href="#booking" class="btn">Book This Tour</a></div></div><div class="package-card"><div class="card-img"><img src="https://plus.unsplash.com/premium_photo-1754254805718-a361e9a0f1a0?q=80&w=1329&auto=format&fit=crop" alt="Ella"><span class="duration">🕐 3 Days</span></div><div class="card-body"><h3>Ella & Nuwara Eliya</h3><p class="location"><i class="fas fa-map-marker-alt"></i> Hill Country</p><ul class="features"><li><i class="fas fa-check"></i> Nine Arch Bridge</li><li><i class="fas fa-check"></i> Tea Plantations</li><li><i class="fas fa-check"></i> Hotel Included</li><li><i class="fas fa-check"></i> AC Van</li></ul><a href="#booking" class="btn">Book This Tour</a></div></div><div class="package-card"><div class="card-img"><img src="https://images.unsplash.com/photo-1579989197111-928f586796a3?q=80&w=1168&auto=format&fit=crop" alt="Galle"><span class="duration">🕐 2 Days</span></div><div class="card-body"><h3>Galle & Beach Tour</h3><p class="location"><i class="fas fa-map-marker-alt"></i> Southern Coast</p><ul class="features"><li><i class="fas fa-check"></i> Galle Fort</li><li><i class="fas fa-check"></i> Unawatuna Beach</li><li><i class="fas fa-check"></i> Turtle Hatchery</li><li><i class="fas fa-check"></i> AC Vehicle</li></ul><a href="#booking" class="btn">Book This Tour</a></div></div><div class="package-card"><div class="card-img"><img src="https://images.unsplash.com/photo-1665849050332-8d5d7e59afb6?q=80&w=1170&auto=format&fit=crop" alt="Kandy"><span class="duration">🕐 1 Day</span></div><div class="card-body"><h3>Kandy City Tour</h3><p class="location"><i class="fas fa-map-marker-alt"></i> Kandy</p><ul class="features"><li><i class="fas fa-check"></i> Temple of Tooth</li><li><i class="fas fa-check"></i> Royal Garden</li><li><i class="fas fa-check"></i> Cultural Show</li><li><i class="fas fa-check"></i> AC Vehicle</li></ul><a href="#booking" class="btn">Book This Tour</a></div></div><div class="package-card"><div class="card-img"><img src="https://images.unsplash.com/photo-1695173987873-6f157a2d6ad1?q=80&w=1170&auto=format&fit=crop" alt="Yala"><span class="duration">🕐 2 Days</span></div><div class="card-body"><h3>Yala Safari</h3><p class="location"><i class="fas fa-map-marker-alt"></i> Yala National Park</p><ul class="features"><li><i class="fas fa-check"></i> Jeep Safari</li><li><i class="fas fa-check"></i> Wildlife Spotting</li><li><i class="fas fa-check"></i> Camping Option</li><li><i class="fas fa-check"></i> AC Transport</li></ul><a href="#booking" class="btn">Book This Tour</a></div></div><div class="package-card"><div class="card-img"><img src="https://images.unsplash.com/photo-1613693699413-7dde0260f437?q=80&w=1169&auto=format&fit=crop" alt="Mirissa"><span class="duration">🕐 2 Days</span></div><div class="card-body"><h3>Mirissa Whales</h3><p class="location"><i class="fas fa-map-marker-alt"></i> Mirissa Beach</p><ul class="features"><li><i class="fas fa-check"></i> Whale Watching</li><li><i class="fas fa-check"></i> Beach Time</li><li><i class="fas fa-check"></i> Seafood BBQ</li><li><i class="fas fa-check"></i> AC Transport</li></ul><a href="#booking" class="btn">Book This Tour</a></div></div></div></div></section>
 
 <!-- Gallery -->
@@ -925,8 +894,8 @@
 <!-- Booking -->
 <section id="booking"><div class="container"><div class="section-header"><p class="subtitle">Reserve Your Ride</p><h2>📋 Book Your Tour</h2></div><div class="booking-wrapper"><div class="booking-info"><h3>Why Choose Lucky Tours?</h3><div class="info-item"><i class="fas fa-shield-alt"></i><span><strong>Safe & Secure</strong> – Licensed and insured vehicles</span></div><div class="info-item"><i class="fas fa-clock"></i><span><strong>24/7 Service</strong> – Available anytime</span></div><div class="info-item"><i class="fas fa-star"></i><span><strong>5-Star Rated</strong> – Trusted by hundreds</span></div></div><div><form id="bookingForm"><div class="input-group"><label>👤 Full Name *</label><input type="text" id="bName" required placeholder="Your full name"></div><div class="input-group"><label>📞 Phone Number *</label><input type="tel" id="bPhone" required placeholder="0094719210238"></div><div class="input-group"><label>🗺️ Select Service *</label><select id="bService" required><option value="">-- Choose a Service --</option><option>Island Wide Tour</option><option>Wedding Hire</option><option>Airport Transfer</option></select></div><div class="input-group"><label>📅 Date</label><input type="date" id="bDate"></div><div class="input-group"><label>💬 More Details</label><textarea id="bMessage" placeholder="Tell us about your trip..."></textarea></div><button class="submit-btn" type="submit" id="submitBookingBtn"><i class="fas fa-paper-plane"></i> Submit Booking</button></form><div class="form-success" id="formSuccess"><i class="fas fa-check-circle"></i><p>✅ Booking Submitted Successfully!</p><p>We'll contact you shortly. Thank you! 🙏</p></div></div></div></div></section>
 
-<!-- Comments -->
-<section id="comments"><div class="container"><div class="section-header"><p class="subtitle">Share Your Experience</p><h2>💬 Client Comments</h2></div><div class="comments-container"><div class="comment-form-area"><h3>Leave a Comment</h3><div class="input-group"><label>Your Name *</label><input type="text" id="commentName" placeholder="Enter your name" required></div><div class="input-group"><label>Your Comment *</label><textarea id="commentText" placeholder="Share your experience with Lucky Tours..." required></textarea></div><button class="submit-btn" id="submitComment" style="width:auto;padding:12px 30px;"><i class="fas fa-comment"></i> Post Comment</button></div><h4 style="margin-bottom:20px;color:#111;">Recent Comments (<span id="commentCount">0</span>)</h4><div class="comment-list" id="commentList"><p class="no-comments" id="noComments">No comments yet. Be the first to share! 😊</p></div></div></div></section>
+<!-- Comments Section - Google Sheets only, shows latest 5 comments, no localStorage -->
+<section id="comments"><div class="container"><div class="section-header"><p class="subtitle">Share Your Experience</p><h2>💬 Client Comments</h2></div><div class="comments-container"><div class="comment-form-area"><h3>Leave a Comment</h3><div class="input-group"><label>Your Name *</label><input type="text" id="commentName" placeholder="Enter your name" required></div><div class="input-group"><label>Your Comment *</label><textarea id="commentText" placeholder="Share your experience with Lucky Tours..." required></textarea></div><button class="submit-btn" id="submitComment" style="width:auto;padding:12px 30px;"><i class="fas fa-comment"></i> Post Comment</button></div><h4 style="margin-bottom:20px;color:#111;">Latest Comments (<span id="commentCount">0</span>)</h4><div class="comment-list" id="commentList"><p class="no-comments">Loading comments...</p></div></div></div></section>
 
 <!-- Contact -->
 <section id="contact"><div class="container"><div class="section-header"><p class="subtitle">Get In Touch</p><h2>📬 Contact Us</h2></div><div class="contact-grid"><div class="contact-card"><i class="fas fa-phone"></i><h4>Call Us</h4><a href="tel:+94719210238">+94 71 921 0238</a></div><div class="contact-card"><i class="fab fa-whatsapp"></i><h4>WhatsApp</h4><a href="https://wa.me/94719210238" target="_blank">+94 71 921 0238</a></div><div class="contact-card"><i class="fas fa-envelope"></i><h4>Email</h4><a href="mailto:luckytours.iw@gmail.com">luckytours.iw@gmail.com</a></div></div><p style="text-align:center;margin-top:35px;font-size:1.3rem;color:var(--accent);font-weight:700;">☘️ "Your Lucky Journey Starts Here" 🚕</p></div></section>
@@ -936,9 +905,10 @@
 
 <script>
     (function() {
-        // ========== EMAILJS SETUP – ඔබේ EmailJS Public Key ==========
+        // EmailJS public key
         emailjs.init('U2idDXII4VQnvsnAd');
 
+        // Preloader logic (unchanged)
         const preloader = document.getElementById('preloader');
         const progressPercentSpan = document.getElementById('progressPercent');
         const progressFillDiv = document.getElementById('progressFill');
@@ -972,10 +942,12 @@
         }, 2800);
         
         window.addEventListener('DOMContentLoaded', () => {
-            // Back to top, nav scroll, mobile, slider, lightbox, reviews, booking, comments
+            // Back to top
             const backToTop = document.getElementById('backToTop');
             window.addEventListener('scroll', () => backToTop.classList.toggle('show', window.scrollY > 500));
             backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+            
+            // Navbar scroll & mobile
             const navbar = document.getElementById('navbar');
             window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
             const hamburger = document.getElementById('hamburger');
@@ -984,6 +956,7 @@
                 hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); navLinks.classList.toggle('active'); });
                 document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => { hamburger.classList.remove('active'); navLinks.classList.remove('active'); }));
             }
+            
             // Lightbox
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightboxImg');
@@ -992,13 +965,17 @@
             });
             document.getElementById('closeLightbox')?.addEventListener('click', () => { lightbox.classList.remove('active'); document.body.style.overflow = ''; });
             lightbox?.addEventListener('click', e => { if(e.target === lightbox){ lightbox.classList.remove('active'); document.body.style.overflow = ''; } });
-
+            
             // Reviews
-            const reviewsData = [{ stars:5, text:'Amazing service! The driver was super friendly. Highly recommend!', name:'Sarah Johnson', country:'UK', initials:'SJ'},{ stars:5, text:'Best taxi service in Sri Lanka. Professional and punctual.', name:'Michael Chen', country:'Singapore', initials:'MC'},{ stars:5, text:'Our wedding car was beautiful! Made our special day memorable.', name:'Priya Patel', country:'India', initials:'PP'}];
+            const reviewsData = [
+                { stars:5, text:'Amazing service! The driver was super friendly. Highly recommend!', name:'Sarah Johnson', country:'UK', initials:'SJ'},
+                { stars:5, text:'Best taxi service in Sri Lanka. Professional and punctual.', name:'Michael Chen', country:'Singapore', initials:'MC'},
+                { stars:5, text:'Our wedding car was beautiful! Made our special day memorable.', name:'Priya Patel', country:'India', initials:'PP'}
+            ];
             const reviewsSlider = document.getElementById('reviewsSlider');
             if(reviewsSlider) reviewsSlider.innerHTML = reviewsData.map(r => `<div class="review-card"><div class="stars">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</div><p class="review-text">"${r.text}"</p><div class="reviewer"><div class="reviewer-avatar">${r.initials}</div><div class="reviewer-info"><strong>${r.name}</strong><span>${r.country}</span></div></div></div>`).join('');
-
-            // ========== BOOKING FORM – EmailJS with loading state ==========
+            
+            // Booking Form (EmailJS)
             const bookingForm = document.getElementById('bookingForm');
             const formSuccess = document.getElementById('formSuccess');
             const submitBtn = document.getElementById('submitBookingBtn');
@@ -1010,16 +987,9 @@
                 const date = document.getElementById('bDate').value;
                 const message = document.getElementById('bMessage').value.trim();
                 if(name && phone && service){
-                    // Disable button & show loading state
                     submitBtn.disabled = true;
                     submitBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Sending...';
-                    const templateParams = {
-                        from_name: name,
-                        phone: phone,
-                        service: service,
-                        date: date,
-                        message: message
-                    };
+                    const templateParams = { from_name: name, phone: phone, service: service, date: date, message: message };
                     emailjs.send('service_xkw03r3', 'template_en5o8lw', templateParams)
                         .then(() => {
                             bookingForm.style.display = 'none';
@@ -1027,7 +997,6 @@
                         }, (error) => {
                             alert('Oops! Something went wrong. Please try again later.');
                             console.error('EmailJS Error:', error);
-                            // Re-enable button
                             submitBtn.disabled = false;
                             submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Booking';
                         });
@@ -1035,44 +1004,125 @@
                     alert('Please fill all required fields (Name, Phone, Service)');
                 }
             });
-
-            // ========== COMMENTS – localStorage + Google Sheets ==========
-            const commentName = document.getElementById('commentName'), commentText = document.getElementById('commentText'), submitComment = document.getElementById('submitComment'), commentList = document.getElementById('commentList'), commentCount = document.getElementById('commentCount');
-            const loadComments = () => JSON.parse(localStorage.getItem('luckyToursComments') || '[]');
-            const saveComments = (c) => localStorage.setItem('luckyToursComments', JSON.stringify(c));
-            const renderComments = () => { const comments = loadComments(); if(commentCount) commentCount.textContent = comments.length; if(commentList) commentList.innerHTML = comments.length ? comments.map(c => `<div class="comment-item"><div class="comment-header"><span class="comment-name">👤 ${escapeHtml(c.name)}</span><span class="comment-date">${c.date}</span></div><p class="comment-text">${escapeHtml(c.text)}</p></div>`).join('') : '<p class="no-comments">No comments yet. Be the first to share! 😊</p>'; };
-            const escapeHtml = (str) => { const div = document.createElement('div'); div.textContent = str; return div.innerHTML; };
-            renderComments();
-
-            if(submitComment) submitComment.addEventListener('click', () => {
-                const name = commentName.value.trim(), text = commentText.value.trim();
-                if(name && text){
-                    const newComment = { name, text, date: new Date().toLocaleString() };
-                    const comments = loadComments();
-                    comments.unshift(newComment);
-                    saveComments(comments);
-                    renderComments();
-                    // ⚠️ Google Sheet Web App URL එක පහතින් replace කරන්න
-                    fetch('https://script.google.com/macros/s/AKfycbzk-7tJRDGtF--O-RBuJI8jO8Y2vxxXbHIQmqTRX9bqJ_GHL2lMjZTxZVQp7J8vGG06/exec', {
-                        method: 'POST',
-                        body: JSON.stringify(newComment),
-                        headers: { 'Content-Type': 'text/plain' }
-                    }).catch(err => console.error('Google Sheet save error:', err));
-                    commentName.value = '';
-                    commentText.value = '';
-                } else {
-                    alert('Please enter both name and comment.');
+            
+            // ---------- COMMENTS: Google Sheets only, no localStorage, show latest 5 ----------
+            const sheetUrl = 'https://script.google.com/macros/s/AKfycbxsy0z0qjphaK-J5u9i0a3R3bttcTRLOHS0SFQNB6XV3Us123WAcwRL3J8_z42ZEV6L/exec';
+            const commentName = document.getElementById('commentName');
+            const commentText = document.getElementById('commentText');
+            const submitComment = document.getElementById('submitComment');
+            const commentList = document.getElementById('commentList');
+            const commentCountSpan = document.getElementById('commentCount');
+            
+            // Helper: fetch comments from Google Sheets, expecting array of objects with name, text, date
+            async function fetchComments() {
+                try {
+                    const response = await fetch(sheetUrl, { method: 'GET', mode: 'cors' });
+                    if (!response.ok) throw new Error('Network error');
+                    const data = await response.json();
+                    // Ensure data is an array
+                    let comments = Array.isArray(data) ? data : [];
+                    // Sort by date descending (newest first) if date field exists
+                    comments.sort((a, b) => new Date(b.date) - new Date(a.date));
+                    // Take only latest 5
+                    const latest5 = comments.slice(0, 5);
+                    return latest5;
+                } catch (err) {
+                    console.error('Error fetching comments:', err);
+                    return [];
                 }
-            });
-
-            // Hero Slider
-            const slides = document.querySelectorAll('.hero-slide'), dots = document.querySelectorAll('.slider-dots button'), prev = document.getElementById('prevSlide'), next = document.getElementById('nextSlide');
+            }
+            
+            // Render comments from fetched data
+            function renderComments(comments) {
+                if (!commentList) return;
+                if (commentCountSpan) commentCountSpan.textContent = comments.length;
+                if (comments.length === 0) {
+                    commentList.innerHTML = '<p class="no-comments">No comments yet. Be the first to share! 😊</p>';
+                    return;
+                }
+                const escapeHtml = (str) => {
+                    const div = document.createElement('div');
+                    div.textContent = str;
+                    return div.innerHTML;
+                };
+                commentList.innerHTML = comments.map(c => `
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <span class="comment-name">👤 ${escapeHtml(c.name)}</span>
+                            <span class="comment-date">${escapeHtml(c.date)}</span>
+                        </div>
+                        <p class="comment-text">${escapeHtml(c.text)}</p>
+                    </div>
+                `).join('');
+            }
+            
+            // Load and display comments on page load
+            async function loadAndDisplayComments() {
+                if (commentList) commentList.innerHTML = '<p class="no-comments">Loading comments...</p>';
+                const comments = await fetchComments();
+                renderComments(comments);
+            }
+            
+            // Submit new comment
+            async function postComment(name, text) {
+                try {
+                    const payload = { name: name, text: text, date: new Date().toLocaleString() };
+                    const response = await fetch(sheetUrl, {
+                        method: 'POST',
+                        mode: 'cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    if (!response.ok) throw new Error('Failed to post comment');
+                    // After successful post, refresh comments
+                    await loadAndDisplayComments();
+                    return true;
+                } catch (err) {
+                    console.error('Error posting comment:', err);
+                    alert('Could not save comment. Please try again later.');
+                    return false;
+                }
+            }
+            
+            // Event listener for submit comment
+            if (submitComment) {
+                submitComment.addEventListener('click', async () => {
+                    const name = commentName.value.trim();
+                    const text = commentText.value.trim();
+                    if (!name || !text) {
+                        alert('Please enter both name and comment.');
+                        return;
+                    }
+                    // Disable button temporarily to avoid double submission
+                    submitComment.disabled = true;
+                    submitComment.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Posting...';
+                    const success = await postComment(name, text);
+                    if (success) {
+                        commentName.value = '';
+                        commentText.value = '';
+                    }
+                    submitComment.disabled = false;
+                    submitComment.innerHTML = '<i class="fas fa-comment"></i> Post Comment';
+                });
+            }
+            
+            // Initial load of comments from Google Sheets
+            loadAndDisplayComments();
+            
+            // Hero Slider (only dots, no arrows)
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.slider-dots button');
             let cur = 0, total = slides.length, autoTimer;
-            const goTo = (idx) => { slides.forEach(s => s.classList.remove('active')); dots.forEach(d => d.classList.remove('active')); cur = (idx+total)%total; slides[cur].classList.add('active'); if(dots[cur]) dots[cur].classList.add('active'); };
-            const nextSlide = () => goTo(cur+1); const prevSlide = () => goTo(cur-1);
-            const startAuto = () => { if(autoTimer) clearInterval(autoTimer); autoTimer = setInterval(nextSlide, 5000); };
-            if(prev && next) { prev.addEventListener('click', () => { prevSlide(); startAuto(); }); next.addEventListener('click', () => { nextSlide(); startAuto(); }); }
-            if(dots.length) dots.forEach((dot,i) => dot.addEventListener('click', () => { goTo(i); startAuto(); }));
+            const goTo = (idx) => {
+                slides.forEach(s => s.classList.remove('active'));
+                dots.forEach(d => d.classList.remove('active'));
+                cur = (idx + total) % total;
+                slides[cur].classList.add('active');
+                if (dots[cur]) dots[cur].classList.add('active');
+            };
+            const nextSlide = () => goTo(cur + 1);
+            const startAuto = () => { if (autoTimer) clearInterval(autoTimer); autoTimer = setInterval(nextSlide, 5000); };
+            if (dots.length) dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); startAuto(); }));
             startAuto();
         });
     })();
